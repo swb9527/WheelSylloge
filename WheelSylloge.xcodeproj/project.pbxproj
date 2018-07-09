@@ -1,0 +1,763 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		023134DBF4B55B255BA20818 /* libPods-WheelSyllogeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C84DC32468831A9B6D2B29 /* libPods-WheelSyllogeTests.a */; };
+		4FAE6722DB3E52026AF0F186 /* libPods-WheelSylloge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 571A12451106102E458245E7 /* libPods-WheelSylloge.a */; };
+		82D6ED80B76FB14483263AD7 /* libPods-WheelSyllogeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6AA19E26345B83463DA26 /* libPods-WheelSyllogeUITests.a */; };
+		965A586320EF37C100354E39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A586220EF37C100354E39 /* AppDelegate.m */; };
+		965A586620EF37C100354E39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A586520EF37C100354E39 /* ViewController.m */; };
+		965A586920EF37C100354E39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965A586720EF37C100354E39 /* Main.storyboard */; };
+		965A586B20EF37C200354E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965A586A20EF37C200354E39 /* Assets.xcassets */; };
+		965A586E20EF37C200354E39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965A586C20EF37C200354E39 /* LaunchScreen.storyboard */; };
+		965A587120EF37C200354E39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587020EF37C200354E39 /* main.m */; };
+		965A587B20EF37C200354E39 /* WheelSyllogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587A20EF37C200354E39 /* WheelSyllogeTests.m */; };
+		965A588620EF37C300354E39 /* WheelSyllogeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A588520EF37C300354E39 /* WheelSyllogeUITests.m */; };
+		96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */; };
+		96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC9020F3621F000EE750 /* UIView+SWB.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		965A587720EF37C200354E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 965A585620EF37C100354E39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965A585D20EF37C100354E39;
+			remoteInfo = WheelSylloge;
+		};
+		965A588220EF37C300354E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 965A585620EF37C100354E39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965A585D20EF37C100354E39;
+			remoteInfo = WheelSylloge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07C84DC32468831A9B6D2B29 /* libPods-WheelSyllogeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelSyllogeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21241943158FA2EDBA2D8C35 /* Pods-WheelSyllogeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSyllogeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSyllogeUITests/Pods-WheelSyllogeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		571A12451106102E458245E7 /* libPods-WheelSylloge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelSylloge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C3BEB3FF9E849DD1A192DFD /* Pods-WheelSyllogeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSyllogeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSyllogeTests/Pods-WheelSyllogeTests.release.xcconfig"; sourceTree = "<group>"; };
+		82C6AA19E26345B83463DA26 /* libPods-WheelSyllogeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelSyllogeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		871B1AF6E5D9B9CCA7F6E50F /* Pods-WheelSylloge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSylloge.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSylloge/Pods-WheelSylloge.release.xcconfig"; sourceTree = "<group>"; };
+		965A585E20EF37C100354E39 /* WheelSylloge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelSylloge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		965A586120EF37C100354E39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		965A586220EF37C100354E39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		965A586420EF37C100354E39 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		965A586520EF37C100354E39 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		965A586820EF37C100354E39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		965A586A20EF37C200354E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		965A586D20EF37C200354E39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		965A586F20EF37C200354E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		965A587020EF37C200354E39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		965A587620EF37C200354E39 /* WheelSyllogeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelSyllogeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		965A587A20EF37C200354E39 /* WheelSyllogeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelSyllogeTests.m; sourceTree = "<group>"; };
+		965A587C20EF37C200354E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		965A588120EF37C300354E39 /* WheelSyllogeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelSyllogeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		965A588520EF37C300354E39 /* WheelSyllogeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelSyllogeUITests.m; sourceTree = "<group>"; };
+		965A588720EF37C300354E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A1FC8920F2FA38000EE750 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		96A1FC8C20F35AAB000EE750 /* SwbADC_TabBarBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBarBadge.h; sourceTree = "<group>"; };
+		96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarBadge.m; sourceTree = "<group>"; };
+		96A1FC8F20F3621F000EE750 /* UIView+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SWB.h"; sourceTree = "<group>"; };
+		96A1FC9020F3621F000EE750 /* UIView+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SWB.m"; sourceTree = "<group>"; };
+		9E37DD8E0D601A31705C28D0 /* Pods-WheelSyllogeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSyllogeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSyllogeUITests/Pods-WheelSyllogeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B7ADE0456854732A409B7531 /* Pods-WheelSylloge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSylloge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSylloge/Pods-WheelSylloge.debug.xcconfig"; sourceTree = "<group>"; };
+		E7C78366F8D8D153A9E64B26 /* Pods-WheelSyllogeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSyllogeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSyllogeTests/Pods-WheelSyllogeTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		965A585B20EF37C100354E39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAE6722DB3E52026AF0F186 /* libPods-WheelSylloge.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965A587320EF37C200354E39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023134DBF4B55B255BA20818 /* libPods-WheelSyllogeTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965A587E20EF37C200354E39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82D6ED80B76FB14483263AD7 /* libPods-WheelSyllogeUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C69A757B9918EF8EF21FCE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				571A12451106102E458245E7 /* libPods-WheelSylloge.a */,
+				07C84DC32468831A9B6D2B29 /* libPods-WheelSyllogeTests.a */,
+				82C6AA19E26345B83463DA26 /* libPods-WheelSyllogeUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		965A585520EF37C100354E39 = {
+			isa = PBXGroup;
+			children = (
+				965A586020EF37C100354E39 /* WheelSylloge */,
+				965A587920EF37C200354E39 /* WheelSyllogeTests */,
+				965A588420EF37C300354E39 /* WheelSyllogeUITests */,
+				965A585F20EF37C100354E39 /* Products */,
+				FAF929A69EB6023EC6014225 /* Pods */,
+				2C69A757B9918EF8EF21FCE2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		965A585F20EF37C100354E39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				965A585E20EF37C100354E39 /* WheelSylloge.app */,
+				965A587620EF37C200354E39 /* WheelSyllogeTests.xctest */,
+				965A588120EF37C300354E39 /* WheelSyllogeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		965A586020EF37C100354E39 /* WheelSylloge */ = {
+			isa = PBXGroup;
+			children = (
+				96A1FC8B20F34944000EE750 /* Category */,
+				96A1FC8A20F3281D000EE750 /* AppDelegate */,
+				96A1FC8820F2FA24000EE750 /* Config */,
+				96A1FC8420F2F6FA000EE750 /* SwbADC_TabBar */,
+				96A1FC8320F2F6CF000EE750 /* Other */,
+			);
+			path = WheelSylloge;
+			sourceTree = "<group>";
+		};
+		965A587920EF37C200354E39 /* WheelSyllogeTests */ = {
+			isa = PBXGroup;
+			children = (
+				965A587A20EF37C200354E39 /* WheelSyllogeTests.m */,
+				965A587C20EF37C200354E39 /* Info.plist */,
+			);
+			path = WheelSyllogeTests;
+			sourceTree = "<group>";
+		};
+		965A588420EF37C300354E39 /* WheelSyllogeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				965A588520EF37C300354E39 /* WheelSyllogeUITests.m */,
+				965A588720EF37C300354E39 /* Info.plist */,
+			);
+			path = WheelSyllogeUITests;
+			sourceTree = "<group>";
+		};
+		96A1FC8320F2F6CF000EE750 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				965A586720EF37C100354E39 /* Main.storyboard */,
+				965A586A20EF37C200354E39 /* Assets.xcassets */,
+				965A586C20EF37C200354E39 /* LaunchScreen.storyboard */,
+				965A586F20EF37C200354E39 /* Info.plist */,
+				965A587020EF37C200354E39 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		96A1FC8420F2F6FA000EE750 /* SwbADC_TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				96A1FC8C20F35AAB000EE750 /* SwbADC_TabBarBadge.h */,
+				96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */,
+			);
+			path = SwbADC_TabBar;
+			sourceTree = "<group>";
+		};
+		96A1FC8820F2FA24000EE750 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				96A1FC8920F2FA38000EE750 /* PrefixHeader.pch */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		96A1FC8A20F3281D000EE750 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				965A586120EF37C100354E39 /* AppDelegate.h */,
+				965A586220EF37C100354E39 /* AppDelegate.m */,
+				965A586420EF37C100354E39 /* ViewController.h */,
+				965A586520EF37C100354E39 /* ViewController.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		96A1FC8B20F34944000EE750 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				96A1FC8F20F3621F000EE750 /* UIView+SWB.h */,
+				96A1FC9020F3621F000EE750 /* UIView+SWB.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		FAF929A69EB6023EC6014225 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7ADE0456854732A409B7531 /* Pods-WheelSylloge.debug.xcconfig */,
+				871B1AF6E5D9B9CCA7F6E50F /* Pods-WheelSylloge.release.xcconfig */,
+				E7C78366F8D8D153A9E64B26 /* Pods-WheelSyllogeTests.debug.xcconfig */,
+				6C3BEB3FF9E849DD1A192DFD /* Pods-WheelSyllogeTests.release.xcconfig */,
+				21241943158FA2EDBA2D8C35 /* Pods-WheelSyllogeUITests.debug.xcconfig */,
+				9E37DD8E0D601A31705C28D0 /* Pods-WheelSyllogeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		965A585D20EF37C100354E39 /* WheelSylloge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 965A588A20EF37C300354E39 /* Build configuration list for PBXNativeTarget "WheelSylloge" */;
+			buildPhases = (
+				3BA221A71D5FE11E660E48C9 /* [CP] Check Pods Manifest.lock */,
+				965A585A20EF37C100354E39 /* Sources */,
+				965A585B20EF37C100354E39 /* Frameworks */,
+				965A585C20EF37C100354E39 /* Resources */,
+				20F96C022FF20FD5D40395AD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WheelSylloge;
+			productName = WheelSylloge;
+			productReference = 965A585E20EF37C100354E39 /* WheelSylloge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		965A587520EF37C200354E39 /* WheelSyllogeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 965A588D20EF37C300354E39 /* Build configuration list for PBXNativeTarget "WheelSyllogeTests" */;
+			buildPhases = (
+				B236CFE2CC9EDEF18AFF9AE2 /* [CP] Check Pods Manifest.lock */,
+				965A587220EF37C200354E39 /* Sources */,
+				965A587320EF37C200354E39 /* Frameworks */,
+				965A587420EF37C200354E39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				965A587820EF37C200354E39 /* PBXTargetDependency */,
+			);
+			name = WheelSyllogeTests;
+			productName = WheelSyllogeTests;
+			productReference = 965A587620EF37C200354E39 /* WheelSyllogeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		965A588020EF37C200354E39 /* WheelSyllogeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 965A589020EF37C300354E39 /* Build configuration list for PBXNativeTarget "WheelSyllogeUITests" */;
+			buildPhases = (
+				A0E28E8D7B2609DCFBEE2A1F /* [CP] Check Pods Manifest.lock */,
+				965A587D20EF37C200354E39 /* Sources */,
+				965A587E20EF37C200354E39 /* Frameworks */,
+				965A587F20EF37C200354E39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				965A588320EF37C300354E39 /* PBXTargetDependency */,
+			);
+			name = WheelSyllogeUITests;
+			productName = WheelSyllogeUITests;
+			productReference = 965A588120EF37C300354E39 /* WheelSyllogeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		965A585620EF37C100354E39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "万恶的小彬彬";
+				TargetAttributes = {
+					965A585D20EF37C100354E39 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					965A587520EF37C200354E39 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 965A585D20EF37C100354E39;
+					};
+					965A588020EF37C200354E39 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 965A585D20EF37C100354E39;
+					};
+				};
+			};
+			buildConfigurationList = 965A585920EF37C100354E39 /* Build configuration list for PBXProject "WheelSylloge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 965A585520EF37C100354E39;
+			productRefGroup = 965A585F20EF37C100354E39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				965A585D20EF37C100354E39 /* WheelSylloge */,
+				965A587520EF37C200354E39 /* WheelSyllogeTests */,
+				965A588020EF37C200354E39 /* WheelSyllogeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		965A585C20EF37C100354E39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965A586E20EF37C200354E39 /* LaunchScreen.storyboard in Resources */,
+				965A586B20EF37C200354E39 /* Assets.xcassets in Resources */,
+				965A586920EF37C100354E39 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965A587420EF37C200354E39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965A587F20EF37C200354E39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20F96C022FF20FD5D40395AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WheelSylloge/Pods-WheelSylloge-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WheelSylloge/Pods-WheelSylloge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BA221A71D5FE11E660E48C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheelSylloge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0E28E8D7B2609DCFBEE2A1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheelSyllogeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B236CFE2CC9EDEF18AFF9AE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WheelSyllogeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		965A585A20EF37C100354E39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965A586620EF37C100354E39 /* ViewController.m in Sources */,
+				96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */,
+				965A587120EF37C200354E39 /* main.m in Sources */,
+				96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */,
+				965A586320EF37C100354E39 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965A587220EF37C200354E39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965A587B20EF37C200354E39 /* WheelSyllogeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		965A587D20EF37C200354E39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965A588620EF37C300354E39 /* WheelSyllogeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		965A587820EF37C200354E39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 965A585D20EF37C100354E39 /* WheelSylloge */;
+			targetProxy = 965A587720EF37C200354E39 /* PBXContainerItemProxy */;
+		};
+		965A588320EF37C300354E39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 965A585D20EF37C100354E39 /* WheelSylloge */;
+			targetProxy = 965A588220EF37C300354E39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		965A586720EF37C100354E39 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				965A586820EF37C100354E39 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		965A586C20EF37C200354E39 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				965A586D20EF37C200354E39 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		965A588820EF37C300354E39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		965A588920EF37C300354E39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		965A588B20EF37C300354E39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7ADE0456854732A409B7531 /* Pods-WheelSylloge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WheelSylloge/Config/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/WheelSylloge/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasai.WheelSylloge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		965A588C20EF37C300354E39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 871B1AF6E5D9B9CCA7F6E50F /* Pods-WheelSylloge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WheelSylloge/Config/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/WheelSylloge/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasai.WheelSylloge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		965A588E20EF37C300354E39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7C78366F8D8D153A9E64B26 /* Pods-WheelSyllogeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WheelSyllogeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasai.WheelSyllogeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheelSylloge.app/WheelSylloge";
+			};
+			name = Debug;
+		};
+		965A588F20EF37C300354E39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3BEB3FF9E849DD1A192DFD /* Pods-WheelSyllogeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WheelSyllogeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasai.WheelSyllogeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheelSylloge.app/WheelSylloge";
+			};
+			name = Release;
+		};
+		965A589120EF37C300354E39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21241943158FA2EDBA2D8C35 /* Pods-WheelSyllogeUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WheelSyllogeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasai.WheelSyllogeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WheelSylloge;
+			};
+			name = Debug;
+		};
+		965A589220EF37C300354E39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E37DD8E0D601A31705C28D0 /* Pods-WheelSyllogeUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WheelSyllogeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasai.WheelSyllogeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WheelSylloge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		965A585920EF37C100354E39 /* Build configuration list for PBXProject "WheelSylloge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965A588820EF37C300354E39 /* Debug */,
+				965A588920EF37C300354E39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		965A588A20EF37C300354E39 /* Build configuration list for PBXNativeTarget "WheelSylloge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965A588B20EF37C300354E39 /* Debug */,
+				965A588C20EF37C300354E39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		965A588D20EF37C300354E39 /* Build configuration list for PBXNativeTarget "WheelSyllogeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965A588E20EF37C300354E39 /* Debug */,
+				965A588F20EF37C300354E39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		965A589020EF37C300354E39 /* Build configuration list for PBXNativeTarget "WheelSyllogeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965A589120EF37C300354E39 /* Debug */,
+				965A589220EF37C300354E39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 965A585620EF37C100354E39 /* Project object */;
+}
