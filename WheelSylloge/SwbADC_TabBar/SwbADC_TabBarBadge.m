@@ -21,6 +21,7 @@
         self.badgeLabel.layer.masksToBounds = YES;
         self.badgeLabel.backgroundColor = UIColor.redColor;
         [self addSubview:self.badgeLabel];
+        self.hidden = YES;
     }
     return self;
 }
@@ -28,6 +29,7 @@
 - (void)setType:(SWBBadgeValueType)type
 {
     _type = type;
+    self.hidden = NO;
     switch (type) {
         case SWBBadgeValueTypeDot:
             {
@@ -46,7 +48,14 @@
             
         case SWBBadgeValueTypeNumber:
             {
-                
+                CGSize size = CGSizeZero;
+                if (self.badgeLabel.text.length <= 1) {
+                    size = CGSizeMake(self.height, self.height);
+                }else if (self.badgeLabel.text.length > 1) {
+                    size = self.bounds.size;
+                }
+                self.badgeLabel.size = size;
+                self.badgeLabel.layer.cornerRadius = self.height * 0.5;
             }
             break;
             
