@@ -8,6 +8,8 @@
 
 #import "SwbADC_TabBarBadge.h"
 #import "UIView+SWB.h"
+#import "SwbADC_TabBarTool.h"
+#import "CAAnimation+SWB.h"
 
 @implementation SwbADC_TabBarBadge
 
@@ -62,6 +64,21 @@
         default:
             break;
     }
+    
+    SWBTabBarBadgeAnimationType animationType = [[SwbADC_TabBarTool shareTool]badgeAnimationType];
+    if (animationType == SWBTabBarBadgeAnimationTypeShake) {
+        //抖动动画
+        [self.badgeLabel.layer addAnimation:[CAAnimation shakeAnimationRepeatTimes:5] forKey:@"shakeAnimation"];
+    }else if (animationType == SWBTabBarBadgeAnimationTypeOpacity) {
+        //透明过度动画
+        [self.badgeLabel.layer addAnimation:[CAAnimation opacityAnimationDurationTimes:0.3] forKey:@"opacityAnimation"];
+    }else if (animationType == SWBTabBarBadgeAnimationTypeScale) {
+        [self.badgeLabel.layer addAnimation:[CAAnimation scaleAnimation] forKey:@"scaleAnimation"];
+    }
+}
+
+- (CGSize)sizeWithAttribute:(NSString *)text {
+    return [text sizeWithAttributes:@{NSFontAttributeName:self.badgeLabel.font}];
 }
 
 /*

@@ -18,6 +18,10 @@
 		965A587120EF37C200354E39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587020EF37C200354E39 /* main.m */; };
 		965A587B20EF37C200354E39 /* WheelSyllogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587A20EF37C200354E39 /* WheelSyllogeTests.m */; };
 		965A588620EF37C300354E39 /* WheelSyllogeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A588520EF37C300354E39 /* WheelSyllogeUITests.m */; };
+		9682551C20F44383004AF21C /* SwbADC_TabBarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682551B20F44383004AF21C /* SwbADC_TabBarTool.m */; };
+		9682552020F450BE004AF21C /* CAAnimation+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682551F20F450BE004AF21C /* CAAnimation+SWB.m */; };
+		9682552320F47909004AF21C /* SwbADC_TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682552220F47909004AF21C /* SwbADC_TabBarItem.m */; };
+		9682552620F4AEB7004AF21C /* SwbADC_TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682552520F4AEB7004AF21C /* SwbADC_TabBar.m */; };
 		96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */; };
 		96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC9020F3621F000EE750 /* UIView+SWB.m */; };
 /* End PBXBuildFile section */
@@ -62,6 +66,15 @@
 		965A588120EF37C300354E39 /* WheelSyllogeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelSyllogeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		965A588520EF37C300354E39 /* WheelSyllogeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelSyllogeUITests.m; sourceTree = "<group>"; };
 		965A588720EF37C300354E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9682551A20F44383004AF21C /* SwbADC_TabBarTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBarTool.h; sourceTree = "<group>"; };
+		9682551B20F44383004AF21C /* SwbADC_TabBarTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarTool.m; sourceTree = "<group>"; };
+		9682551D20F4439E004AF21C /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		9682551E20F450BE004AF21C /* CAAnimation+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+SWB.h"; sourceTree = "<group>"; };
+		9682551F20F450BE004AF21C /* CAAnimation+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+SWB.m"; sourceTree = "<group>"; };
+		9682552120F47909004AF21C /* SwbADC_TabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBarItem.h; sourceTree = "<group>"; };
+		9682552220F47909004AF21C /* SwbADC_TabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarItem.m; sourceTree = "<group>"; };
+		9682552420F4AEB7004AF21C /* SwbADC_TabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBar.h; sourceTree = "<group>"; };
+		9682552520F4AEB7004AF21C /* SwbADC_TabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBar.m; sourceTree = "<group>"; };
 		96A1FC8920F2FA38000EE750 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		96A1FC8C20F35AAB000EE750 /* SwbADC_TabBarBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBarBadge.h; sourceTree = "<group>"; };
 		96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarBadge.m; sourceTree = "<group>"; };
@@ -179,6 +192,12 @@
 			children = (
 				96A1FC8C20F35AAB000EE750 /* SwbADC_TabBarBadge.h */,
 				96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */,
+				9682551A20F44383004AF21C /* SwbADC_TabBarTool.h */,
+				9682551B20F44383004AF21C /* SwbADC_TabBarTool.m */,
+				9682552120F47909004AF21C /* SwbADC_TabBarItem.h */,
+				9682552220F47909004AF21C /* SwbADC_TabBarItem.m */,
+				9682552420F4AEB7004AF21C /* SwbADC_TabBar.h */,
+				9682552520F4AEB7004AF21C /* SwbADC_TabBar.m */,
 			);
 			path = SwbADC_TabBar;
 			sourceTree = "<group>";
@@ -187,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				96A1FC8920F2FA38000EE750 /* PrefixHeader.pch */,
+				9682551D20F4439E004AF21C /* Color.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -207,6 +227,8 @@
 			children = (
 				96A1FC8F20F3621F000EE750 /* UIView+SWB.h */,
 				96A1FC9020F3621F000EE750 /* UIView+SWB.m */,
+				9682551E20F450BE004AF21C /* CAAnimation+SWB.h */,
+				9682551F20F450BE004AF21C /* CAAnimation+SWB.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -434,8 +456,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				965A586620EF37C100354E39 /* ViewController.m in Sources */,
+				9682552620F4AEB7004AF21C /* SwbADC_TabBar.m in Sources */,
+				9682552020F450BE004AF21C /* CAAnimation+SWB.m in Sources */,
 				96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */,
 				965A587120EF37C200354E39 /* main.m in Sources */,
+				9682552320F47909004AF21C /* SwbADC_TabBarItem.m in Sources */,
+				9682551C20F44383004AF21C /* SwbADC_TabBarTool.m in Sources */,
 				96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */,
 				965A586320EF37C100354E39 /* AppDelegate.m in Sources */,
 			);
