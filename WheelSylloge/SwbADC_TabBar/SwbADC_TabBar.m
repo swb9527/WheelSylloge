@@ -8,7 +8,11 @@
 
 #import "SwbADC_TabBar.h"
 
+#define screenWidth ([UIScreen mainScreen].bounds.size.width)
+
 @interface SwbADC_TabBar()
+
+@property (nonatomic, strong) NSMutableArray <SwbADC_TabBarItem*>*items;
 
 /* 模糊效果 毛玻璃 */
 @property (nonatomic, strong) UIBlurEffect *effect;
@@ -51,9 +55,18 @@
     [self.backgroundImageView addSubview:self.effectView];
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+}
 
-
-
+//item布局
+- (void)viewDidLayoutItems
+{
+    CGFloat itemWidth = screenWidth / self.items.count;
+    
+}
 
 
 
@@ -84,6 +97,13 @@
         _backgroundImageView = [[UIImageView alloc]init];
     }
     return _backgroundImageView;
+}
+- (NSMutableArray<SwbADC_TabBarItem *> *)items
+{
+    if (!_items) {
+        _items = [[NSMutableArray alloc]init];
+    }
+    return _items;
 }
 
 
