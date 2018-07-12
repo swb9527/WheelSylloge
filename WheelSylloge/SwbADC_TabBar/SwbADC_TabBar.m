@@ -65,7 +65,14 @@
 - (void)viewDidLayoutItems
 {
     CGFloat itemWidth = screenWidth / self.items.count;
-    
+    [self.items enumerateObjectsUsingBlock:^(SwbADC_TabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGRect itemFrame = item.frame;
+        CGFloat itemHeight = self.frame.size.height;
+        if (iphoneX || itemHeight > 50) {
+            itemHeight = 49;
+        }
+        BOOL
+    }];
 }
 
 
