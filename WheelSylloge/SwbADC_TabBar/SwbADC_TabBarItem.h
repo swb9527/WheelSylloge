@@ -104,6 +104,21 @@ typedef void(^CustomInteractionEffectBlock) (SwbADC_TabBarItem *item);
 /* 角标数为零是否自动隐藏角标 默认隐藏 */
 @property (nonatomic, assign) BOOL badgeAutomationHidden;
 
+/* titleLabel */
+@property (nonatomic, strong) UILabel *titleLabel;
+/* iconImageView */
+@property (nonatomic, strong) UIImageView *iconImageView;
+/* item内部布局模式 */
+@property (nonatomic, assign) SWBTabBarItemLayoutStyle itemLayoutStyle;
+/* titleLabelSize */
+@property (nonatomic, assign) CGSize titleLabelSize;
+/* iconImageViewSize */
+@property (nonatomic, assign) CGSize iconImageViewSize;
+/* 所有组件距离item边距 默认 UIEdgeInsetsMake(5, 5, 10, 5) */
+@property (nonatomic, assign) UIEdgeInsets itemEdgeInsets;
+/* 图片文字之间的距离 默认 2 */
+@property (nonatomic, assign) CGFloat imageTitleSpacing;
+
 /* item点击后的动画效果 */
 @property (nonatomic, assign) SWBInteractionEffectStyle interactionEffectStyle;
 /* 是否允许重复点击触发动画 默认NO */
@@ -158,5 +173,8 @@ typedef void(^CustomInteractionEffectBlock) (SwbADC_TabBarItem *item);
 @property (nonatomic, strong) UILabel *titleLabel;
 /* 角标 view */
 @property (nonatomic, strong) SwbADC_TabBarBadge *badgeView;
+
+/* 点击item执行动画 */
+- (void)itemConfigAnimation;
 
 @end
