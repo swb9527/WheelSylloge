@@ -19,7 +19,13 @@ typedef NS_ENUM(NSInteger, SWBBadgeValueType) {
 /* BadgeValueLb */
 @property (nonatomic, strong) UILabel *badgeLabel;
 
+/* badgeText */
+@property (nonatomic, strong) NSString *badgeText;
+
 /* 徽章样式 */
 @property (nonatomic, assign) SWBBadgeValueType type;
+
+/* 为零是否自动隐藏 默认不隐藏 */
+@property(nonatomic, assign)BOOL automaticHidden;
 
 @end

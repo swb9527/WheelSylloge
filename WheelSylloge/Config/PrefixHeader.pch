@@ -17,6 +17,13 @@
 
 #define iphoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
+// weak
+#define WeakSelf __weak typeof(self)weakSelf = self
+
+#pragma mark - 快速定义一个weakSelf和strongSelf
+#define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
+#define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
+
 #import "Color.h"
 
 #endif /* PrefixHeader_pch */

@@ -9,6 +9,7 @@
 #import "SwbADC_TabBar.h"
 
 #define screenWidth ([UIScreen mainScreen].bounds.size.width)
+#define itemTag 100
 
 @interface SwbADC_TabBar()
 
@@ -49,6 +50,16 @@
     return self;
 }
 
+- (instancetype)initWithTabBarConfig:(NSArray<SwbADC_ItemConfigModel *> *)tabBarConfigModels
+{
+    self = [super init];
+    if (self) {
+        [self configuration];
+        [self setTabBarConfigModels:tabBarConfigModels];
+    }
+    return self;
+}
+
 - (void)configuration
 {
     [self addSubview:self.backgroundImageView]; //添加背景图
@@ -58,7 +69,25 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+    [self viewDidLayoutItems];
+}
+
+- (void)setTabBarConfigModels:(NSArray<SwbADC_ItemConfigModel *> *)tabBarConfigModels
+{
+    _tabBarConfigModels = tabBarConfigModels;
+    @WeakObj(self);
+    [tabBarConfigModels enumerateObjectsUsingBlock:^(SwbADC_ItemConfigModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        @StrongObj(self);
+        SwbADC_TabBarItem *item = [[SwbADC_TabBarItem alloc]initWithModel:obj];
+        item.itemIndex = idx;
+        item.tag = itemTag + idx;
+        [item addTarget:self action:@selector(click_tabBarItem:) forControlEvents:UIControlEventTouchUpInside];
+        if (!idx) {
+            item.isSelect = YES;
+        }
+        [self addSubview:item];
+        [self.items addObject:item];
+    }];
 }
 
 //item布局
@@ -71,7 +100,86 @@
         if (iphoneX || itemHeight > 50) {
             itemHeight = 49;
         }
-        BOOL
+        BOOL isNoSettingItemSize = !item.itemModel.itemSize.width || !item.itemModel.itemSize.height;
+        if (isNoSettingItemSize) {
+            itemFrame.origin.x = idx * itemWidth;
+            itemFrame.size = CGSizeMake(itemWidth, itemHeight);
+        }else {
+            //自定义itemSize
+            itemFrame.size = item.itemModel.itemSize;
+        }
+        //对齐方式
+        switch (item.itemModel.itemAlignmentStyle) {
+            case SWBTabBarItemAlignmentStyleCenter:
+            {
+                //居中 默认
+                itemFrame.origin.x = idx * itemWidth + (itemWidth - itemFrame.size.width) / 2;
+                itemFrame.origin.y = (itemHeight - itemFrame.size.height) / 2;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleCenterTop:
+            {
+                //顶部 居中
+                itemFrame.origin.x = idx * itemWidth + (itemWidth - itemFrame.size.width) / 2;
+                itemFrame.origin.y = 0;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleCenterLeft:
+            {
+                //靠左 居中
+                itemFrame.origin.x = idx * itemWidth;
+                itemFrame.origin.y = (itemHeight - itemFrame.size.height) / 2;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleCenterRight:
+            {
+                //靠右 居中
+                itemFrame.origin.x = idx * itemWidth + (itemWidth - itemFrame.size.width);
+                itemFrame.origin.y = (itemHeight - itemFrame.size.height) / 2;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleCenterBottom:
+            {
+                //底部 居中
+                itemFrame.origin.x = idx * itemWidth + (itemWidth - itemFrame.size.width) / 2;
+                itemFrame.origin.y = itemHeight - itemFrame.size.height;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleTopLeft:
+            {
+                //上左对齐
+                itemFrame.origin.x = idx * itemWidth;
+                itemFrame.origin.y = 0;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleTopRight:
+            {
+                //上右对齐
+                itemFrame.origin.x = idx * itemWidth + (itemWidth - itemFrame.size.width);
+                itemFrame.origin.y = 0;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleBottomLeft:
+            {
+                //下左对齐
+                itemFrame.origin.x = idx * itemWidth;
+                itemFrame.origin.y = itemHeight - itemFrame.size.height;
+            }
+                break;
+            case SWBTabBarItemAlignmentStyleBottomRight:
+            {
+                //下右对齐
+                itemFrame.origin.x = idx * itemWidth + (itemWidth - itemFrame.size.width);
+                itemFrame.origin.y = itemHeight - itemFrame.size.height;
+            }
+                break;
+                
+            default:
+                break;
+        }
+        item.frame = itemFrame;
+        //通知item同时开始计算坐标
+        [item itemDidLayoutControl];
     }];
 }
 

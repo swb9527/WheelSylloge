@@ -60,7 +60,12 @@ typedef NS_ENUM(NSInteger, SWBInteractionEffectStyle) {
 //当交互效果选择自定义时，会回调以下Block
 typedef void(^CustomInteractionEffectBlock) (SwbADC_TabBarItem *item);
 
-
+//交互动效的部位
+typedef NS_ENUM(NSInteger, SWBInteractionEffectPart) {
+    SWBInteractionEffectPartAll,            //整个item
+    SWBInteractionEffectPartImageView,      //只有imageView
+    SWBInteractionEffectPartTitleLabel,     //只有标题
+};
 
 @interface SwbADC_ItemConfigModel : NSObject
 
@@ -114,13 +119,15 @@ typedef void(^CustomInteractionEffectBlock) (SwbADC_TabBarItem *item);
 @property (nonatomic, assign) CGSize titleLabelSize;
 /* iconImageViewSize */
 @property (nonatomic, assign) CGSize iconImageViewSize;
-/* 所有组件距离item边距 默认 UIEdgeInsetsMake(5, 5, 10, 5) */
+/* 所有组件距离item边距 默认 UIEdgeInsetsMake(5, 5, 5, 5) */
 @property (nonatomic, assign) UIEdgeInsets itemEdgeInsets;
 /* 图片文字之间的距离 默认 2 */
 @property (nonatomic, assign) CGFloat imageTitleSpacing;
 
 /* item点击后的动画效果 */
 @property (nonatomic, assign) SWBInteractionEffectStyle interactionEffectStyle;
+/* 交互动画的部位 */
+@property (nonatomic, assign) SWBInteractionEffectPart interactionEffectPart;
 /* 是否允许重复点击触发动画 默认NO */
 @property (nonatomic, assign) BOOL isRepeatClick;
 /* 当交互效果选择自定义时 会回调以下Block */
@@ -174,6 +181,8 @@ typedef void(^CustomInteractionEffectBlock) (SwbADC_TabBarItem *item);
 /* 角标 view */
 @property (nonatomic, strong) SwbADC_TabBarBadge *badgeView;
 
+/* 重新开始布局 */
+- (void)itemDidLayoutControl;
 /* 点击item执行动画 */
 - (void)itemConfigAnimation;
 

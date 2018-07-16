@@ -19,6 +19,12 @@
 
 @interface SwbADC_TabBar : UIView
 
+/* 重载构造创建方法 */
+- (instancetype)initWithTabBarConfig:(NSArray <SwbADC_ItemConfigModel *> *)tabBarConfigModels;
+@property (nonatomic, strong) NSArray <SwbADC_ItemConfigModel *> *tabBarConfigModels;
+// 进行item子视图重新布局 最好推荐在TabBarVC中的 -viewDidLayoutSubviews 中执行，可以达到自动布局的效果
+- (void)viewDidLayoutItems;
+
 /* TabBar背景图 */
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 /* 当前选中的item下标 */

@@ -212,18 +212,134 @@
         case SWBInteractionEffectStyleRotationY:
         {
             //旋转
-            
+            animation.keyPath = @"transform.rotation.y";
+            animation.values = @[@(0),@(M_PI/2),@(M_PI),@(M_PI*1.5),@(M_PI*2)];
+            animation.duration = 0.6;
         }
             break;
         case SWBInteractionEffectStyleCustom:
         {
             //自定义动画效果
+            if (self.itemModel.customInteractionEffectBlock) {
+                self.itemModel.customInteractionEffectBlock(self);
+            }
         }
             break;
             
         default:
             break;
     }
+    if (self.itemModel.interactionEffectPart == SWBInteractionEffectPartAll) {
+        [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull view, NSUInteger idx, BOOL * _Nonnull stop) {
+            [view.layer addAnimation:animation forKey:nil];
+        }];
+    }else if (self.itemModel.interactionEffectPart == SWBInteractionEffectPartImageView) {
+        [self.iconImageView.layer addAnimation:animation forKey:nil];
+    }else if (self.itemModel.interactionEffectPart == SWBInteractionEffectPartTitleLabel) {
+        [self.titleLabel.layer addAnimation:animation forKey:nil];
+    }
+}
+
+- (void)setItemModel:(SwbADC_ItemConfigModel *)itemModel
+{
+    _itemModel = itemModel;
+    self.backgroundImageView = itemModel.backgroundImageView;
+    self.title = itemModel.itemTitle;
+    self.normalImage = [UIImage imageNamed:itemModel.normalImageName];
+    self.selectImage = [UIImage imageNamed:itemModel.selectImageName];
+    self.normalColor = itemModel.normalColor;
+    self.selectColor = itemModel.selectColor;
+    self.normalTintColor = itemModel.normalTintColor;
+    self.selectTintColor = itemModel.selectTintColor;
+    self.normalBackgroundColor = itemModel.normalBackgroundColor;
+    self.selectBackgroundColor = itemModel.selectBackgroundColor;
+    self.titleLabel = itemModel.titleLabel;
+    self.iconImageView = itemModel.iconImageView;
+    CGRect itemFrame = self.frame;
+    itemFrame.size = itemModel.itemSize;
+    self.badgeView.automaticHidden = itemModel.badgeAutomationHidden;
+    self.frame = itemFrame;
+    self.badge = itemModel.badge;
+}
+
+- (void)setIsSelect:(BOOL)isSelect
+{
+    _isSelect = isSelect;
+    if (_isSelect) {
+        //选中
+        self.iconImageView.image = self.selectImage;
+        self.titleLabel.textColor = self.selectColor;
+        // 如果有设置tintColor，那么就选中图片后将图片渲染成TintColor
+        if (self.selectTintColor) {
+            self.iconImageView.image = [self.iconImageView.image imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)];
+            [self.iconImageView setTintColor:self.selectTintColor];
+        }
+        @WeakObj(self);
+        [UIView animateWithDuration:0.3 animations:^{
+            @StrongObj(self);
+            if (self.selectBackgroundColor) {
+                self.backgroundColor = self.selectBackgroundColor;
+            }else {
+                self.backgroundColor = UIColor.clearColor;
+            }
+        } completion:nil];
+    }else {
+        //没选中
+        self.iconImageView.image = self.normalImage;
+        self.titleLabel.textColor = self.normalColor;
+        if (self.normalTintColor) {
+            self.iconImageView.image = [self.iconImageView.image imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)];
+            [self.iconImageView setTintColor:self.normalTintColor];
+        }
+        @WeakObj(self);
+        [UIView animateWithDuration:0.3 animations:^{
+            @StrongObj(self);
+            if (self.normalBackgroundColor) {
+                self.backgroundColor = self.normalBackgroundColor;
+            }else {
+                self.backgroundColor = UIColor.clearColor;
+            }
+        } completion:nil];
+    }
+    self.titleLabel.text = self.title;
+}
+
+- (void)setIconImageView:(UIImageView *)iconImageView
+{
+    _iconImageView = iconImageView;
+    [self addSubview:iconImageView];
+    self.isSelect = self.isSelect;
+}
+- (void)setTitleLabel:(UILabel *)titleLabel
+{
+    _titleLabel = titleLabel;
+    [self addSubview:titleLabel];
+}
+- (void)setBackgroundImageView:(UIImageView *)backgroundImageView
+{
+    _backgroundImageView = backgroundImageView;
+    [self addSubview:backgroundImageView];
+}
+
+- (void)setBadge:(NSString *)badge
+{
+    _badge = badge;
+    if (_badge) {
+        self.badgeView.badgeText = badge;
+        [self itemDidLayoutBadgeView];  //布局Badge
+    }
+}
+
+- (SwbADC_TabBarBadge *)badgeView
+{
+    if (!_badgeView) {
+        _badgeView = [[SwbADC_TabBarBadge alloc]init];
+        CGRect frame = _badgeView.frame;
+        frame.size = CGSizeMake(24, 16);
+        _badgeView.frame = frame;
+        [self addSubview:_badgeView];
+    }
+    return _badgeView;
 }
 
 
@@ -232,6 +348,57 @@
 
 
 
+@end
+@implementation SwbADC_ItemConfigModel
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.normalColor = UIColor.grayColor;
+        self.selectColor = UIColor.brownColor;
+        self.bulgeHeight = 15;
+        self.imageTitleSpacing = 2;
+        self.itemEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
+        self.isRepeatClick = NO;
+        self.centerItemStyle = SWBTabBarCenterItemStyleNormal;
+        self.itemAlignmentStyle = SWBTabBarItemAlignmentStyleCenter;
+        self.itemBadgeStyle = SWBTabBarItemBadgeStyleTopRight;
+        self.badgeAutomationHidden = YES;
+        self.itemLayoutStyle = SWBTabBarItemLayoutStyleTopImageBottomTitle;
+    }
+    return self;
+}
+
+- (UILabel *)titleLabel
+{
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc]init];
+        _titleLabel.font = [UIFont systemFontOfSize:10];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.numberOfLines = 0;
+    }
+    return _titleLabel;
+}
+
+- (UIImageView *)iconImageView
+{
+    if (!_iconImageView) {
+        _iconImageView = [[UIImageView alloc]init];
+        _iconImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _iconImageView;
+}
+
+- (UIImageView *)backgroundImageView
+{
+    if (!_backgroundImageView) {
+        _backgroundImageView = [[UIImageView alloc]init];
+    }
+    return _backgroundImageView;
+}
+
+@end
 
 
 /*
@@ -241,5 +408,3 @@
     // Drawing code
 }
 */
-
-@end

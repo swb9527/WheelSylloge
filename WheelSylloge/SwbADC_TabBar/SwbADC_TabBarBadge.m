@@ -22,6 +22,7 @@
         self.badgeLabel.layer.cornerRadius = frame.size.height/2;
         self.badgeLabel.layer.masksToBounds = YES;
         self.badgeLabel.backgroundColor = UIColor.redColor;
+//        self.automaticHidden = YES;
         [self addSubview:self.badgeLabel];
         self.hidden = YES;
     }
@@ -79,6 +80,20 @@
 
 - (CGSize)sizeWithAttribute:(NSString *)text {
     return [text sizeWithAttributes:@{NSFontAttributeName:self.badgeLabel.font}];
+}
+
+- (void)setBadgeText:(NSString *)badgeText
+{
+    _badgeText = badgeText;
+    self.badgeLabel.text = badgeText;
+    if (badgeText.integerValue) {
+        self.hidden = NO;
+        if (badgeText.integerValue > 99) {
+            self.badgeLabel.text = @"99+";
+        }
+    }else {
+        self.hidden = self.automaticHidden;
+    }
 }
 
 /*
