@@ -70,7 +70,13 @@
 {
     [super layoutSubviews];
     [self viewDidLayoutItems];
+    [self itemDidLayoutCenterBulgeItem];
 }
+//- (void)layoutTabBarSubViews
+//{
+//    self.backgroundImageView.frame = self.frame;
+//    self.effectView.frame = self.frame;
+//}
 
 - (void)setTabBarConfigModels:(NSArray<SwbADC_ItemConfigModel *> *)tabBarConfigModels
 {
@@ -88,6 +94,42 @@
         [self addSubview:item];
         [self.items addObject:item];
     }];
+}
+
+static SwbADC_TabBarItem *selectedItem;
+//点击tabBarItem
+- (void)click_tabBarItem:(SwbADC_TabBarItem *)item
+{
+    NSInteger itemIndex = item.itemIndex;
+    [self switch_tabBarItemIndex:itemIndex WithAnimation:YES];
+}
+//切换页面
+- (void)switch_tabBarItemIndex:(NSInteger)index WithAnimation:(BOOL)animation
+{
+    //切换选择item的选中状态
+    [self.items enumerateObjectsUsingBlock:^(SwbADC_TabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+        item.isSelect = index == idx;//当前点击的item选中，其他item选中状态置为NO
+    }];
+    SwbADC_TabBarItem *item = self.items[index];
+    if (item.itemModel.isRepeatClick) {
+        //允许item重复点击
+        if (animation) {
+            [item itemConfigAnimation];//item动画
+        }
+        if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
+            [self.delegate swbADC_TabBar:self didSelectIndex:index];
+        }
+    }else {
+        if (![selectedItem isEqual:item]) {//不是上次点击的item
+            selectedItem = item;
+            if (animation) {
+                [item itemConfigAnimation];
+            }
+            if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
+                [self.delegate swbADC_TabBar:self didSelectIndex:index];
+            }
+        }
+    }
 }
 
 //item布局
@@ -183,10 +225,64 @@
     }];
 }
 
+//设置badge
+- (void)setBadgeValue:(NSString *)badgeValue atIndex:(NSInteger)index
+{
+    if (index < self.items.count) {
+        SwbADC_TabBarItem *item = self.items[index];
+        item.badge = badgeValue;
+    }else {
+        NSException *excp = [NSException exceptionWithName:@"Error" reason:@"数组越界" userInfo:nil];
+        [excp raise];//抛出异常
+    }
+}
 
-
-
-
+//适配中间的凸出按钮
+- (void)itemDidLayoutCenterBulgeItem
+{
+    CGFloat itemWidth = self.frame.size.width / self.items.count;
+    CGFloat itemHeight = self.frame.size.height;
+    [self.items enumerateObjectsUsingBlock:^(SwbADC_TabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGRect itemFrame = item.frame;
+        switch (item.itemModel.centerItemStyle) {
+            case SWBTabBarCenterItemStyleNormal:
+                //无
+                break;
+            case SWBTabBarCenterItemStyleCircular:
+            {
+                //圆形
+                itemFrame.size = CGSizeMake(itemHeight + item.itemModel.bulgeHeight, itemHeight + item.itemModel.bulgeHeight);
+                itemFrame.origin.y = -item.itemModel.bulgeHeight;
+                itemFrame.origin.x = idx * itemWidth + (itemWidth - (itemHeight+item.itemModel.bulgeHeight)) / 2;
+                item.frame = itemFrame;
+                item.layer.masksToBounds = YES;
+                if (item.itemModel.bulgeRoundCorners) {
+                    item.layer.cornerRadius = item.itemModel.bulgeRoundCorners;
+                }else {
+                    item.layer.cornerRadius = (itemWidth+item.itemModel.bulgeHeight) / 2;
+                }
+            }
+                break;
+            case SWBTabBarCenterItemStyleSquare:
+            {
+                //矩形
+                itemFrame.size = CGSizeMake(itemHeight + item.itemModel.bulgeHeight, itemHeight + item.itemModel.bulgeHeight);
+                itemFrame.origin.y = -item.itemModel.bulgeHeight;
+                itemFrame.origin.x = idx * itemWidth + (itemHeight + item.itemModel.bulgeHeight) / 2;
+                item.frame = itemFrame;
+                if (item.itemModel.bulgeRoundCorners) {
+                    item.layer.masksToBounds = YES;
+                    item.layer.cornerRadius = item.itemModel.bulgeRoundCorners;
+                }
+            }
+                break;
+                
+            default:
+                break;
+        }
+        item.frame = itemFrame;
+    }];
+}
 
 
 #pragma mark-   懒加载
@@ -210,6 +306,7 @@
 {
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc]init];
+        _backgroundImageView.frame = self.bounds;
     }
     return _backgroundImageView;
 }
@@ -219,6 +316,30 @@
         _items = [[NSMutableArray alloc]init];
     }
     return _items;
+}
+
+- (NSArray<SwbADC_TabBarItem *> *)tabBarItems
+{
+    return self.items;
+}
+- (SwbADC_TabBarItem *)selectedItem
+{
+    return [self.tabBarItems objectAtIndex:self.selectedIndex];
+}
+- (void)setSelectedIndex:(NSInteger)selectedIndex
+{
+    _selectedIndex = selectedIndex;
+    [self switch_tabBarItemIndex:selectedIndex WithAnimation:NO];
+}
+- (void)setSelectIndex:(NSInteger)selectIndex withAnimation:(BOOL)animation
+{
+    _selectedIndex = selectIndex;
+    [self switch_tabBarItemIndex:selectIndex WithAnimation:animation];
+}
+- (void)setTranslucent:(BOOL)translucent
+{
+    _translucent = translucent;
+    self.effectView.hidden = !translucent;
 }
 
 

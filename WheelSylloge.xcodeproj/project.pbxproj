@@ -22,6 +22,13 @@
 		9682552020F450BE004AF21C /* CAAnimation+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682551F20F450BE004AF21C /* CAAnimation+SWB.m */; };
 		9682552320F47909004AF21C /* SwbADC_TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682552220F47909004AF21C /* SwbADC_TabBarItem.m */; };
 		9682552620F4AEB7004AF21C /* SwbADC_TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682552520F4AEB7004AF21C /* SwbADC_TabBar.m */; };
+		9688484320FDD5330004B73B /* SwbADC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688484220FDD5330004B73B /* SwbADC_ViewController.m */; };
+		9688484E20FDDFF30004B73B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688484D20FDDFF30004B73B /* BaseViewController.m */; };
+		9688485120FDE0170004B73B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485020FDE0170004B73B /* HomeViewController.m */; };
+		9688485420FDE0290004B73B /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485320FDE0290004B73B /* ChatViewController.m */; };
+		9688485720FDE0350004B73B /* TimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485620FDE0350004B73B /* TimeLineViewController.m */; };
+		9688485A20FDE03F0004B73B /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485920FDE03F0004B73B /* MineViewController.m */; };
+		9688485D20FDE04C0004B73B /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485C20FDE04C0004B73B /* CenterViewController.m */; };
 		96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */; };
 		96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC9020F3621F000EE750 /* UIView+SWB.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +82,20 @@
 		9682552220F47909004AF21C /* SwbADC_TabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarItem.m; sourceTree = "<group>"; };
 		9682552420F4AEB7004AF21C /* SwbADC_TabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBar.h; sourceTree = "<group>"; };
 		9682552520F4AEB7004AF21C /* SwbADC_TabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBar.m; sourceTree = "<group>"; };
+		9688484120FDD5330004B73B /* SwbADC_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_ViewController.h; sourceTree = "<group>"; };
+		9688484220FDD5330004B73B /* SwbADC_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_ViewController.m; sourceTree = "<group>"; };
+		9688484C20FDDFF30004B73B /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9688484D20FDDFF30004B73B /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9688484F20FDE0170004B73B /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9688485020FDE0170004B73B /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9688485220FDE0290004B73B /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		9688485320FDE0290004B73B /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		9688485520FDE0350004B73B /* TimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLineViewController.h; sourceTree = "<group>"; };
+		9688485620FDE0350004B73B /* TimeLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeLineViewController.m; sourceTree = "<group>"; };
+		9688485820FDE03F0004B73B /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		9688485920FDE03F0004B73B /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		9688485B20FDE04C0004B73B /* CenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
+		9688485C20FDE04C0004B73B /* CenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
 		96A1FC8920F2FA38000EE750 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		96A1FC8C20F35AAB000EE750 /* SwbADC_TabBarBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBarBadge.h; sourceTree = "<group>"; };
 		96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarBadge.m; sourceTree = "<group>"; };
@@ -148,8 +169,10 @@
 		965A586020EF37C100354E39 /* WheelSylloge */ = {
 			isa = PBXGroup;
 			children = (
-				96A1FC8B20F34944000EE750 /* Category */,
 				96A1FC8A20F3281D000EE750 /* AppDelegate */,
+				9688484B20FDDFC50004B73B /* Base */,
+				9688484420FDD65C0004B73B /* ViewControllers */,
+				96A1FC8B20F34944000EE750 /* Category */,
 				96A1FC8820F2FA24000EE750 /* Config */,
 				96A1FC8420F2F6FA000EE750 /* SwbADC_TabBar */,
 				96A1FC8320F2F6CF000EE750 /* Other */,
@@ -175,6 +198,80 @@
 			path = WheelSyllogeUITests;
 			sourceTree = "<group>";
 		};
+		9688484420FDD65C0004B73B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9688484720FDDEC50004B73B /* tabBar(子控制器) */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9688484520FDDE440004B73B /* HomeVC(1.首页) */ = {
+			isa = PBXGroup;
+			children = (
+				9688484F20FDE0170004B73B /* HomeViewController.h */,
+				9688485020FDE0170004B73B /* HomeViewController.m */,
+			);
+			path = "HomeVC(1.首页)";
+			sourceTree = "<group>";
+		};
+		9688484620FDDE940004B73B /* ChatVC(2.聊天) */ = {
+			isa = PBXGroup;
+			children = (
+				9688485220FDE0290004B73B /* ChatViewController.h */,
+				9688485320FDE0290004B73B /* ChatViewController.m */,
+			);
+			path = "ChatVC(2.聊天)";
+			sourceTree = "<group>";
+		};
+		9688484720FDDEC50004B73B /* tabBar(子控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				9688484A20FDDF770004B73B /* CenterVC(中间) */,
+				9688484920FDDF5F0004B73B /* MineVC(4.我的) */,
+				9688484820FDDF150004B73B /* TimeLineVC(3.朋友圈) */,
+				9688484620FDDE940004B73B /* ChatVC(2.聊天) */,
+				9688484520FDDE440004B73B /* HomeVC(1.首页) */,
+			);
+			path = "tabBar(子控制器)";
+			sourceTree = "<group>";
+		};
+		9688484820FDDF150004B73B /* TimeLineVC(3.朋友圈) */ = {
+			isa = PBXGroup;
+			children = (
+				9688485520FDE0350004B73B /* TimeLineViewController.h */,
+				9688485620FDE0350004B73B /* TimeLineViewController.m */,
+			);
+			path = "TimeLineVC(3.朋友圈)";
+			sourceTree = "<group>";
+		};
+		9688484920FDDF5F0004B73B /* MineVC(4.我的) */ = {
+			isa = PBXGroup;
+			children = (
+				9688485820FDE03F0004B73B /* MineViewController.h */,
+				9688485920FDE03F0004B73B /* MineViewController.m */,
+			);
+			path = "MineVC(4.我的)\U0010";
+			sourceTree = "<group>";
+		};
+		9688484A20FDDF770004B73B /* CenterVC(中间) */ = {
+			isa = PBXGroup;
+			children = (
+				9688485B20FDE04C0004B73B /* CenterViewController.h */,
+				9688485C20FDE04C0004B73B /* CenterViewController.m */,
+			);
+			path = "CenterVC(中间)";
+			sourceTree = "<group>";
+		};
+		9688484B20FDDFC50004B73B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9688484C20FDDFF30004B73B /* BaseViewController.h */,
+				9688484D20FDDFF30004B73B /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		96A1FC8320F2F6CF000EE750 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +295,8 @@
 				9682552220F47909004AF21C /* SwbADC_TabBarItem.m */,
 				9682552420F4AEB7004AF21C /* SwbADC_TabBar.h */,
 				9682552520F4AEB7004AF21C /* SwbADC_TabBar.m */,
+				9688484120FDD5330004B73B /* SwbADC_ViewController.h */,
+				9688484220FDD5330004B73B /* SwbADC_ViewController.m */,
 			);
 			path = SwbADC_TabBar;
 			sourceTree = "<group>";
@@ -455,15 +554,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9688485420FDE0290004B73B /* ChatViewController.m in Sources */,
+				9688485D20FDE04C0004B73B /* CenterViewController.m in Sources */,
+				9688484320FDD5330004B73B /* SwbADC_ViewController.m in Sources */,
 				965A586620EF37C100354E39 /* ViewController.m in Sources */,
+				9688484E20FDDFF30004B73B /* BaseViewController.m in Sources */,
 				9682552620F4AEB7004AF21C /* SwbADC_TabBar.m in Sources */,
 				9682552020F450BE004AF21C /* CAAnimation+SWB.m in Sources */,
 				96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */,
+				9688485720FDE0350004B73B /* TimeLineViewController.m in Sources */,
 				965A587120EF37C200354E39 /* main.m in Sources */,
 				9682552320F47909004AF21C /* SwbADC_TabBarItem.m in Sources */,
 				9682551C20F44383004AF21C /* SwbADC_TabBarTool.m in Sources */,
 				96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */,
+				9688485A20FDE03F0004B73B /* MineViewController.m in Sources */,
 				965A586320EF37C100354E39 /* AppDelegate.m in Sources */,
+				9688485120FDE0170004B73B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

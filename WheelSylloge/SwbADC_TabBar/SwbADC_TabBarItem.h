@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SwbADC_TabBarBadge.m"
+#import "SwbADC_TabBarBadge.h"
 
 //tabBar中间item凸出的形状
 typedef NS_ENUM(NSInteger, SWBTabBarCenterItemStyle) {

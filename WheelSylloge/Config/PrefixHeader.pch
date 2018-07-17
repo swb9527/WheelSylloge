@@ -25,5 +25,6 @@
 #define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
 
 #import "Color.h"
+#import "UIView+SWB.h"
 
 #endif /* PrefixHeader_pch */
