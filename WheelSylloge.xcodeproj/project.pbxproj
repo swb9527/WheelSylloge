@@ -18,6 +18,10 @@
 		965A587120EF37C200354E39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587020EF37C200354E39 /* main.m */; };
 		965A587B20EF37C200354E39 /* WheelSyllogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587A20EF37C200354E39 /* WheelSyllogeTests.m */; };
 		965A588620EF37C300354E39 /* WheelSyllogeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A588520EF37C300354E39 /* WheelSyllogeUITests.m */; };
+		9680301120FED070001D6721 /* UIColor+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680301020FED070001D6721 /* UIColor+SWB.m */; };
+		9680301520FEE810001D6721 /* NavigateToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680301420FEE810001D6721 /* NavigateToolUtil.m */; };
+		9680301920FF0A80001D6721 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680301820FF0A80001D6721 /* TestViewController.m */; };
+		9680301C20FF121D001D6721 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680301B20FF121D001D6721 /* BaseNavigationController.m */; };
 		9682551C20F44383004AF21C /* SwbADC_TabBarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682551B20F44383004AF21C /* SwbADC_TabBarTool.m */; };
 		9682552020F450BE004AF21C /* CAAnimation+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682551F20F450BE004AF21C /* CAAnimation+SWB.m */; };
 		9682552320F47909004AF21C /* SwbADC_TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9682552220F47909004AF21C /* SwbADC_TabBarItem.m */; };
@@ -73,6 +77,14 @@
 		965A588120EF37C300354E39 /* WheelSyllogeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelSyllogeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		965A588520EF37C300354E39 /* WheelSyllogeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelSyllogeUITests.m; sourceTree = "<group>"; };
 		965A588720EF37C300354E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9680300F20FED070001D6721 /* UIColor+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SWB.h"; sourceTree = "<group>"; };
+		9680301020FED070001D6721 /* UIColor+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SWB.m"; sourceTree = "<group>"; };
+		9680301320FEE810001D6721 /* NavigateToolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigateToolUtil.h; sourceTree = "<group>"; };
+		9680301420FEE810001D6721 /* NavigateToolUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigateToolUtil.m; sourceTree = "<group>"; };
+		9680301720FF0A80001D6721 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		9680301820FF0A80001D6721 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		9680301A20FF121D001D6721 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		9680301B20FF121D001D6721 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		9682551A20F44383004AF21C /* SwbADC_TabBarTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBarTool.h; sourceTree = "<group>"; };
 		9682551B20F44383004AF21C /* SwbADC_TabBarTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarTool.m; sourceTree = "<group>"; };
 		9682551D20F4439E004AF21C /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
@@ -171,10 +183,11 @@
 			children = (
 				96A1FC8A20F3281D000EE750 /* AppDelegate */,
 				9688484B20FDDFC50004B73B /* Base */,
-				9688484420FDD65C0004B73B /* ViewControllers */,
-				96A1FC8B20F34944000EE750 /* Category */,
 				96A1FC8820F2FA24000EE750 /* Config */,
 				96A1FC8420F2F6FA000EE750 /* SwbADC_TabBar */,
+				9688484420FDD65C0004B73B /* ViewControllers */,
+				96A1FC8B20F34944000EE750 /* Category */,
+				9680301220FEE7FA001D6721 /* UtilTool */,
 				96A1FC8320F2F6CF000EE750 /* Other */,
 			);
 			path = WheelSylloge;
@@ -198,9 +211,28 @@
 			path = WheelSyllogeUITests;
 			sourceTree = "<group>";
 		};
+		9680301220FEE7FA001D6721 /* UtilTool */ = {
+			isa = PBXGroup;
+			children = (
+				9680301320FEE810001D6721 /* NavigateToolUtil.h */,
+				9680301420FEE810001D6721 /* NavigateToolUtil.m */,
+			);
+			path = UtilTool;
+			sourceTree = "<group>";
+		};
+		9680301620FF0A5F001D6721 /* TestVC(测试跳转) */ = {
+			isa = PBXGroup;
+			children = (
+				9680301720FF0A80001D6721 /* TestViewController.h */,
+				9680301820FF0A80001D6721 /* TestViewController.m */,
+			);
+			path = "TestVC(测试跳转)";
+			sourceTree = "<group>";
+		};
 		9688484420FDD65C0004B73B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9680301620FF0A5F001D6721 /* TestVC(测试跳转) */,
 				9688484720FDDEC50004B73B /* tabBar(子控制器) */,
 			);
 			path = ViewControllers;
@@ -268,6 +300,8 @@
 			children = (
 				9688484C20FDDFF30004B73B /* BaseViewController.h */,
 				9688484D20FDDFF30004B73B /* BaseViewController.m */,
+				9680301A20FF121D001D6721 /* BaseNavigationController.h */,
+				9680301B20FF121D001D6721 /* BaseNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -328,6 +362,8 @@
 				96A1FC9020F3621F000EE750 /* UIView+SWB.m */,
 				9682551E20F450BE004AF21C /* CAAnimation+SWB.h */,
 				9682551F20F450BE004AF21C /* CAAnimation+SWB.m */,
+				9680300F20FED070001D6721 /* UIColor+SWB.h */,
+				9680301020FED070001D6721 /* UIColor+SWB.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -554,15 +590,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9680301120FED070001D6721 /* UIColor+SWB.m in Sources */,
 				9688485420FDE0290004B73B /* ChatViewController.m in Sources */,
 				9688485D20FDE04C0004B73B /* CenterViewController.m in Sources */,
 				9688484320FDD5330004B73B /* SwbADC_ViewController.m in Sources */,
+				9680301C20FF121D001D6721 /* BaseNavigationController.m in Sources */,
 				965A586620EF37C100354E39 /* ViewController.m in Sources */,
 				9688484E20FDDFF30004B73B /* BaseViewController.m in Sources */,
 				9682552620F4AEB7004AF21C /* SwbADC_TabBar.m in Sources */,
 				9682552020F450BE004AF21C /* CAAnimation+SWB.m in Sources */,
+				9680301520FEE810001D6721 /* NavigateToolUtil.m in Sources */,
 				96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */,
 				9688485720FDE0350004B73B /* TimeLineViewController.m in Sources */,
+				9680301920FF0A80001D6721 /* TestViewController.m in Sources */,
 				965A587120EF37C200354E39 /* main.m in Sources */,
 				9682552320F47909004AF21C /* SwbADC_TabBarItem.m in Sources */,
 				9682551C20F44383004AF21C /* SwbADC_TabBarTool.m in Sources */,

@@ -14,6 +14,14 @@ typedef NS_ENUM(NSInteger, SWBBadgeValueType) {
     SWBBadgeValueTypeNumber, //number
 };
 
+/* badge 动画样式 */
+typedef NS_ENUM(NSInteger, SWBTabBarBadgeAnimationType) {
+    SWBTabBarBadgeAnimationTypeNone,    //无动画
+    SWBTabBarBadgeAnimationTypeShake,   //抖动动画
+    SWBTabBarBadgeAnimationTypeOpacity, //透明过度动画
+    SWBTabBarBadgeAnimationTypeScale,   //缩放动画
+};
+
 @interface SwbADC_TabBarBadge : UIView
 
 /* BadgeValueLb */
@@ -24,6 +32,9 @@ typedef NS_ENUM(NSInteger, SWBBadgeValueType) {
 
 /* 徽章样式 */
 @property (nonatomic, assign) SWBBadgeValueType type;
+
+/* TabBar Badge 动画样式 (默认无动画) */
+@property (nonatomic, assign) SWBTabBarBadgeAnimationType badgeAnimationType;
 
 /* 为零是否自动隐藏 默认不隐藏 */
 @property(nonatomic, assign)BOOL automaticHidden;

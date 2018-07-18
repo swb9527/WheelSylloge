@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.brownColor;
+    self.navigationItem.title = @"朋友圈";
 }
 
 - (void)didReceiveMemoryWarning {

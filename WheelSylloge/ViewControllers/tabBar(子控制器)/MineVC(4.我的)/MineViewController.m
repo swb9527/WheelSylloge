@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.orangeColor;
+    self.navigationItem.title = @"我的";
 }
 
 - (void)didReceiveMemoryWarning {

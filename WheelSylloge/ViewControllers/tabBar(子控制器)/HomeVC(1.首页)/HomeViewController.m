@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "TestViewController.h"
 
 @interface HomeViewController ()
 
@@ -17,7 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = UIColor.purpleColor;
+    self.view.backgroundColor = UIColor.whiteColor;
+    self.navigationItem.title = @"首页";
+    
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
+    btn.backgroundColor = UIColor.redColor;
+    [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)btnClicked
+{
+    TestViewController *vc = [[TestViewController alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

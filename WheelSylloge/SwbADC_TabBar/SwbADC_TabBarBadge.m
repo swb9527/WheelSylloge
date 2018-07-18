@@ -16,6 +16,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        self.badgeLabel = [[UILabel alloc]initWithFrame:self.bounds];
         self.badgeLabel.textColor = UIColor.whiteColor;
         self.badgeLabel.font = [UIFont systemFontOfSize:11.f];
         self.badgeLabel.textAlignment = NSTextAlignmentCenter;
@@ -37,7 +38,7 @@
         case SWBBadgeValueTypeDot:
             {
                 self.badgeLabel.size = CGSizeMake(8, 8);
-                self.layer.cornerRadius = self.badgeLabel.size.height/2;
+                self.badgeLabel.layer.cornerRadius = self.badgeLabel.size.height/2;
                 self.badgeLabel.x = 0;
                 self.badgeLabel.y = self.height * 0.5 - self.badgeLabel.size.height * 0.5;
             }
@@ -66,7 +67,7 @@
             break;
     }
     
-    SWBTabBarBadgeAnimationType animationType = [[SwbADC_TabBarTool shareTool]badgeAnimationType];
+    SWBTabBarBadgeAnimationType animationType = self.badgeAnimationType;
     if (animationType == SWBTabBarBadgeAnimationTypeShake) {
         //抖动动画
         [self.badgeLabel.layer addAnimation:[CAAnimation shakeAnimationRepeatTimes:5] forKey:@"shakeAnimation"];

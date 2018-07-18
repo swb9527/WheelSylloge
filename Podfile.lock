@@ -9,12 +9,14 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - WRNavigationBar (1.2.0)
 
 DEPENDENCIES:
   - Masonry (~> 1.1.0)
   - MJRefresh (~> 3.1.15.3)
   - Realm
   - SDCycleScrollView (~> 1.65)
+  - WRNavigationBar (~> 1.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Realm
     - SDCycleScrollView
     - SDWebImage
+    - WRNavigationBar
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  WRNavigationBar: dc952230effbb646785f962587caaac06c60f229
 
-PODFILE CHECKSUM: 941e2ee56f275c025e4249445566948a1681e70a
+PODFILE CHECKSUM: 9ea31bfda5078d28d81cea5dde20757e0033ab32
 
 COCOAPODS: 1.5.3

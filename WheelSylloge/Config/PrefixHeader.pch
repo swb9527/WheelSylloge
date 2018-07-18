@@ -17,6 +17,9 @@
 
 #define iphoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
+#pragma mark- ============ 全局APPDelegate ==============
+#define appDelegate ((AppDelegate *)([UIApplication sharedApplication].delegate))
+
 // weak
 #define WeakSelf __weak typeof(self)weakSelf = self
 
@@ -26,5 +29,7 @@
 
 #import "Color.h"
 #import "UIView+SWB.h"
+#import "UIColor+SWB.h"
+#import "AppDelegate.h"
 
 #endif /* PrefixHeader_pch */

@@ -62,6 +62,7 @@
 
 - (void)configuration
 {
+    self.backgroundColor = UIColor.whiteColor;
     [self addSubview:self.backgroundImageView]; //添加背景图
     [self.backgroundImageView addSubview:self.effectView];
 }

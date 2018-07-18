@@ -104,8 +104,12 @@ typedef NS_ENUM(NSInteger, SWBInteractionEffectPart) {
 @property (nonatomic, assign) CGSize itemSize;
 /* 角标内容 */
 @property (nonatomic, copy) NSString *badge;
+/* 角标样式 */
+@property (nonatomic, assign) SWBBadgeValueType badgeValueType;
 /* 角标方位 */
 @property (nonatomic, assign) SWBTabBarItemBadgeStyle itemBadgeStyle;
+/* badge动画形式 */
+@property (nonatomic, assign) SWBTabBarBadgeAnimationType badgeAnimationType;
 /* 角标数为零是否自动隐藏角标 默认隐藏 */
 @property (nonatomic, assign) BOOL badgeAutomationHidden;
 

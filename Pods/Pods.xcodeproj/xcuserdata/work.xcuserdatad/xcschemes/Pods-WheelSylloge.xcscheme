@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F57BBD4F5B3E91BFDDFF0A47A40589A1"
+               BlueprintIdentifier = "0C362F4AE6222D27F672C3B94AF2ACCA"
                BlueprintName = "Pods-WheelSylloge"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-WheelSylloge.a">

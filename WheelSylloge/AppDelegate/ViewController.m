@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SwbADC_ViewController.h"
+#import "NavigateToolUtil.h"
 
 @interface ViewController ()
 
@@ -18,7 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    appDelegate.window.rootViewController = [[SwbADC_ViewController alloc]init];
+    [NavigateToolUtil configNavtigateBar];
 }
 
 

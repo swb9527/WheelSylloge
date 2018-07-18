@@ -9,6 +9,7 @@ target 'WheelSylloge' do
   pod 'Realm'
   pod 'Masonry', '~> 1.1.0'
   pod 'SDCycleScrollView', '~> 1.65'
+  pod 'WRNavigationBar', '~> 1.2.0'
 
   # Pods for WheelSylloge0
 

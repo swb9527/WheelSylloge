@@ -7,6 +7,7 @@
 //
 
 #import "SwbADC_ViewController.h"
+#import "BaseNavigationController.h"
 #import "HomeViewController.h"
 #import "ChatViewController.h"
 #import "TimeLineViewController.h"
@@ -32,10 +33,18 @@
     //1.viewControllers
     {
         HomeViewController *homeVC = [[HomeViewController alloc]init];
+        BaseNavigationController *homeNav = [[BaseNavigationController alloc]initWithRootViewController:homeVC];
+//        homeVC.title = @"首页";
         ChatViewController *chatVC = [[ChatViewController alloc]init];
+        BaseNavigationController *chatNav = [[BaseNavigationController alloc]initWithRootViewController:chatVC];
+//        chatVC.title = @"聊天";
         TimeLineViewController *timeLineVC = [[TimeLineViewController alloc]init];
+        BaseNavigationController *timeLineNav = [[BaseNavigationController alloc]initWithRootViewController:timeLineVC];
+//        timeLineVC.title = @"朋友圈";
         MineViewController *mineVC = [[MineViewController alloc]init];
-        vcArrs = @[homeVC,chatVC,timeLineVC,mineVC];
+        BaseNavigationController *mineNav = [[BaseNavigationController alloc]initWithRootViewController:mineVC];
+//        mineVC.title = @"我的";
+        vcArrs = @[homeNav,chatNav,timeLineNav,mineNav];
     }
     //2.titles
     {
@@ -60,6 +69,7 @@
             model.normalColor = colorFromRGB(0xbfbfbf);
             model.selectColor = colorFromRGB(0x13227a);
             [itemConfigModels addObject:model];
+            model.badgeValueType = SWBBadgeValueTypeDot;
         }];
     }
     //6.设置VCs
@@ -88,9 +98,24 @@
     [super viewDidLayoutSubviews];
     self.swbTabBar.frame = self.tabBar.bounds;
     [self.swbTabBar viewDidLayoutItems];
+    //清除tabbar上方的线条
+//    [self cleanTopLine];
 }
 
-
+- (void)cleanTopLine
+{
+    UIColor *color = [UIColor clearColor];
+    
+    CGRect rect = CGRectMake(0, 0, self.tabBar.width, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [self.tabBar setBackgroundImage:[UIImage new]];
+    [self.tabBar setShadowImage:img];
+}
 
 
 #pragma mark- ============ tabBar Delegate ==============
