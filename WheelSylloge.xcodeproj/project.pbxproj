@@ -18,6 +18,7 @@
 		965A587120EF37C200354E39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587020EF37C200354E39 /* main.m */; };
 		965A587B20EF37C200354E39 /* WheelSyllogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A587A20EF37C200354E39 /* WheelSyllogeTests.m */; };
 		965A588620EF37C300354E39 /* WheelSyllogeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A588520EF37C300354E39 /* WheelSyllogeUITests.m */; };
+		966D572D2101ACF700B9CBDE /* UIFont+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 966D572C2101ACF700B9CBDE /* UIFont+SWB.m */; };
 		9680301120FED070001D6721 /* UIColor+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680301020FED070001D6721 /* UIColor+SWB.m */; };
 		9680301520FEE810001D6721 /* NavigateToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680301420FEE810001D6721 /* NavigateToolUtil.m */; };
 		9680301920FF0A80001D6721 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680301820FF0A80001D6721 /* TestViewController.m */; };
@@ -77,6 +78,8 @@
 		965A588120EF37C300354E39 /* WheelSyllogeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelSyllogeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		965A588520EF37C300354E39 /* WheelSyllogeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelSyllogeUITests.m; sourceTree = "<group>"; };
 		965A588720EF37C300354E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		966D572B2101ACF700B9CBDE /* UIFont+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+SWB.h"; sourceTree = "<group>"; };
+		966D572C2101ACF700B9CBDE /* UIFont+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SWB.m"; sourceTree = "<group>"; };
 		9680300F20FED070001D6721 /* UIColor+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SWB.h"; sourceTree = "<group>"; };
 		9680301020FED070001D6721 /* UIColor+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SWB.m"; sourceTree = "<group>"; };
 		9680301320FEE810001D6721 /* NavigateToolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigateToolUtil.h; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 				9682551F20F450BE004AF21C /* CAAnimation+SWB.m */,
 				9680300F20FED070001D6721 /* UIColor+SWB.h */,
 				9680301020FED070001D6721 /* UIColor+SWB.m */,
+				966D572B2101ACF700B9CBDE /* UIFont+SWB.h */,
+				966D572C2101ACF700B9CBDE /* UIFont+SWB.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 				9688485A20FDE03F0004B73B /* MineViewController.m in Sources */,
 				965A586320EF37C100354E39 /* AppDelegate.m in Sources */,
 				9688485120FDE0170004B73B /* HomeViewController.m in Sources */,
+				966D572D2101ACF700B9CBDE /* UIFont+SWB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

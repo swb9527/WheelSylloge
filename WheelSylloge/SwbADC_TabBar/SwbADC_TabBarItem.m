@@ -338,8 +338,8 @@
         _badgeView = [[SwbADC_TabBarBadge alloc]init];
         CGRect frame = _badgeView.frame;
         frame.size = CGSizeMake(24, 16);
-        frame.origin.x = self.iconImageView.right - 20;
-        frame.origin.y = self.iconImageView.top - 2;
+//        frame.origin.x = self.iconImageView.right - 20;
+//        frame.origin.y = self.iconImageView.top - 2;
         _badgeView.frame = frame;
         [self addSubview:_badgeView];
     }

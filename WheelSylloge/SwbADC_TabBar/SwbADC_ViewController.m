@@ -69,7 +69,14 @@
             model.normalColor = colorFromRGB(0xbfbfbf);
             model.selectColor = colorFromRGB(0x13227a);
             [itemConfigModels addObject:model];
-            model.badgeValueType = SWBBadgeValueTypeDot;
+            model.badgeValueType = SWBBadgeValueTypeNumber;
+            if (idx == 1) {
+                model.badge = @"45";
+            }else if (idx == 2) {
+                model.badge = @"100";
+            }else{
+                model.badge = @"2";
+            }
         }];
     }
     //6.设置VCs
@@ -118,18 +125,18 @@
 }
 
 
-#pragma mark- ============ tabBar Delegate ==============
-- (void)swbADC_TabBar:(SwbADC_TabBar *)tabBar didSelectIndex:(NSInteger)index
-{
-    [self setSelectedIndex:index];
-}
-- (void)setSelectedIndex:(NSUInteger)selectedIndex
-{
-    [super setSelectedIndex:selectedIndex];
-    if (self.swbTabBar) {
-        self.swbTabBar.selectedIndex = selectedIndex;
-    }
-}
+//#pragma mark- ============ tabBar Delegate ==============
+//- (void)swbADC_TabBar:(SwbADC_TabBar *)tabBar didSelectIndex:(NSInteger)index
+//{
+//    [self setSelectedIndex:index];
+//}
+//- (void)setSelectedIndex:(NSUInteger)selectedIndex
+//{
+//    [super setSelectedIndex:selectedIndex];
+//    if (self.swbTabBar) {
+//        self.swbTabBar.selectedIndex = selectedIndex;
+//    }
+//}
 
 
 

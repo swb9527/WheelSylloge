@@ -18,7 +18,7 @@
     if (self = [super initWithFrame:frame]) {
         self.badgeLabel = [[UILabel alloc]initWithFrame:self.bounds];
         self.badgeLabel.textColor = UIColor.whiteColor;
-        self.badgeLabel.font = [UIFont systemFontOfSize:11.f];
+        self.badgeLabel.font = [UIFont boldSystemFontOfSize:10.f];
         self.badgeLabel.textAlignment = NSTextAlignmentCenter;
         self.badgeLabel.layer.cornerRadius = frame.size.height/2;
         self.badgeLabel.layer.masksToBounds = YES;
@@ -41,12 +41,15 @@
                 self.badgeLabel.layer.cornerRadius = self.badgeLabel.size.height/2;
                 self.badgeLabel.x = 0;
                 self.badgeLabel.y = self.height * 0.5 - self.badgeLabel.size.height * 0.5;
+                self.badgeLabel.text = @"";
             }
             break;
             
         case SWBBadgeValueTypeNew:
             {
                 self.badgeLabel.size = CGSizeMake(self.width, self.height);
+                self.badgeLabel.layer.cornerRadius = self.badgeLabel.size.height/2;
+                self.badgeLabel.text = @"new";
             }
             break;
             
