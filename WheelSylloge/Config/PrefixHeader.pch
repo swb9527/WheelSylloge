@@ -31,5 +31,6 @@
 #import "UIView+SWB.h"
 #import "UIColor+SWB.h"
 #import "AppDelegate.h"
+#import "UIFont+SWB.h"
 
 #endif /* PrefixHeader_pch */

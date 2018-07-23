@@ -125,18 +125,18 @@
 }
 
 
-//#pragma mark- ============ tabBar Delegate ==============
-//- (void)swbADC_TabBar:(SwbADC_TabBar *)tabBar didSelectIndex:(NSInteger)index
-//{
-//    [self setSelectedIndex:index];
-//}
-//- (void)setSelectedIndex:(NSUInteger)selectedIndex
-//{
-//    [super setSelectedIndex:selectedIndex];
-//    if (self.swbTabBar) {
-//        self.swbTabBar.selectedIndex = selectedIndex;
-//    }
-//}
+#pragma mark- ============ tabBar Delegate ==============
+- (void)swbADC_TabBar:(SwbADC_TabBar *)tabBar didSelectIndex:(NSInteger)index
+{
+    [self setSelectedIndex:index];
+}
+- (void)setSelectedIndex:(NSUInteger)selectedIndex
+{
+    [super setSelectedIndex:selectedIndex];
+    if (self.swbTabBar) {
+        self.swbTabBar.selectedIndex = selectedIndex;
+    }
+}
 
 
 
