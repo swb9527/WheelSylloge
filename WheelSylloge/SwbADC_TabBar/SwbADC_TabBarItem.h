@@ -190,4 +190,7 @@ typedef NS_ENUM(NSInteger, SWBInteractionEffectPart) {
 /* 点击item执行动画 */
 - (void)itemConfigAnimation;
 
+/* 添加双击事件回调 */
+- (void)setDoubleTapHandler:(void (^)(void))handler;
+
 @end

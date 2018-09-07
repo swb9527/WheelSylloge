@@ -22,6 +22,8 @@
     
     appDelegate.window.rootViewController = [[SwbADC_ViewController alloc]init];
     [NavigateToolUtil configNavtigateBar];
+    
+    [[SwbADC_TabBarTool shareTool] showBadgeValue:@"1111" AtIndex:3];
 }
 
 

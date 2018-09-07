@@ -7,8 +7,9 @@
 //
 
 #import "TestViewController.h"
+#import "Test2ViewController.h"
 
-@interface TestViewController ()
+@interface TestViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -20,15 +21,25 @@
     
     self.navigationItem.title = @"test跳转";
     self.view.backgroundColor = UIColor.whiteColor;
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
-    btn.backgroundColor = UIColor.purpleColor;
-    [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
+//    btn.backgroundColor = UIColor.purpleColor;
+//    [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn];
+//
+//    UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(100, 365, 200, 200)];
+//    btn1.backgroundColor = UIColor.purpleColor;
+//    [btn1 addTarget:self action:@selector(btn1Clicked) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn1];
+//
+//    self.statusBarStyle = UIStatusBarStyleLightContent;
     
-    UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(100, 365, 200, 200)];
-    btn1.backgroundColor = UIColor.purpleColor;
-    [btn1 addTarget:self action:@selector(btn1Clicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn1];
+    
+    
+    [self addTableViewWithHeaderRefresh:YES FooterRefresh:YES];
+    self.baseTableView.delegate = self;
+    self.baseTableView.dataSource = self;
+    
+    
 }
 - (void)btnClicked
 {
@@ -38,6 +49,60 @@
 - (void)btn1Clicked
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleLightContent;
+//}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 8;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.05;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.05;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellId = @"cellId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"我是cell%d",(int)indexPath.row];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Test2ViewController *vc = [[Test2ViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)downLoadRefresh
+{
+    [super downLoadRefresh];
+    NSLog(@"子类下拉刷新");
+}
+- (void)upLoadRefresh
+{
+    [super upLoadRefresh];
+    NSLog(@"子类下拉刷新");
 }
 
 - (void)didReceiveMemoryWarning {

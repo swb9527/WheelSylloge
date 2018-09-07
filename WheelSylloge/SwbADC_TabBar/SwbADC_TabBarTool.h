@@ -13,4 +13,16 @@
 /* 单例 */
 + (instancetype)shareTool;
 
+/* tabbar item 显示小圆点 */
+- (void)showDotAtIndex:(NSInteger)index;
+
+/* tabbar item显示new */
+- (void)showNewAtIndex:(NSInteger)index;
+
+/* tabbar item 显示数字 */
+- (void)showBadgeValue:(NSString *)badgeValue AtIndex:(NSInteger)index;
+
+/* 设置tabbar item被选中 */
+- (void)setTabBarItemSelectedIndex:(NSInteger)index;
+
 @end

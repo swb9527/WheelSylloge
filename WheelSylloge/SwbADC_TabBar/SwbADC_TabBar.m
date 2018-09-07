@@ -102,7 +102,30 @@ static SwbADC_TabBarItem *selectedItem;
 - (void)click_tabBarItem:(SwbADC_TabBarItem *)item
 {
     NSInteger itemIndex = item.itemIndex;
-    [self switch_tabBarItemIndex:itemIndex WithAnimation:YES];
+//    [self switch_tabBarItemIndex:itemIndex WithAnimation:YES];
+    if (item.itemModel.isRepeatClick) {
+        //允许重复触发点击
+        if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
+            [self.delegate swbADC_TabBar:self didSelectIndex:itemIndex];
+        }
+    }else {
+        if (![item isEqual:selectedItem]) {
+            //不是上次点击的item
+            selectedItem = item;
+            if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
+                [self.delegate swbADC_TabBar:self didSelectIndex:itemIndex];
+            }
+        }
+    }
+    [item itemConfigAnimation];
+    
+    @WeakObj(self);
+    [item setDoubleTapHandler:^{
+        @StrongObj(self);
+        if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:itemDoubleTappedIndex:)]) {
+            [self.delegate swbADC_TabBar:self itemDoubleTappedIndex:itemIndex];
+        }
+    }];
 }
 //切换页面
 - (void)switch_tabBarItemIndex:(NSInteger)index WithAnimation:(BOOL)animation
@@ -111,26 +134,27 @@ static SwbADC_TabBarItem *selectedItem;
     [self.items enumerateObjectsUsingBlock:^(SwbADC_TabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
         item.isSelect = index == idx;//当前点击的item选中，其他item选中状态置为NO
     }];
-    SwbADC_TabBarItem *item = self.items[index];
-    if (item.itemModel.isRepeatClick) {
-        //允许item重复点击
-        if (animation) {
-            [item itemConfigAnimation];//item动画
-        }
-        if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
-            [self.delegate swbADC_TabBar:self didSelectIndex:index];
-        }
-    }else {
-        if (![selectedItem isEqual:item]) {//不是上次点击的item
-            selectedItem = item;
-            if (animation) {
-                [item itemConfigAnimation];
-            }
-            if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
-                [self.delegate swbADC_TabBar:self didSelectIndex:index];
-            }
-        }
-    }
+    selectedItem = self.items[index];
+//    SwbADC_TabBarItem *item = self.items[index];
+//    if (item.itemModel.isRepeatClick) {
+//        //允许item重复点击
+//        if (animation) {
+//            [item itemConfigAnimation];//item动画
+//        }
+//        if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
+//            [self.delegate swbADC_TabBar:self didSelectIndex:index];
+//        }
+//    }else {
+//        if (![selectedItem isEqual:item]) {//不是上次点击的item
+//            selectedItem = item;
+//            if (animation) {
+//                [item itemConfigAnimation];
+//            }
+//            if (self.delegate && [self.delegate respondsToSelector:@selector(swbADC_TabBar:didSelectIndex:)]) {
+//                [self.delegate swbADC_TabBar:self didSelectIndex:index];
+//            }
+//        }
+//    }
 }
 
 //item布局

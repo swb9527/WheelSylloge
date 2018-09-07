@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.blueColor;
     self.navigationItem.title = @"聊天";
+    
+    [[SwbADC_TabBarTool shareTool] showNewAtIndex:1];
+}
+
+- (void)selectTabbarItemDoubleTapped
+{
+    [super selectTabbarItemDoubleTapped];
+    NSLog(@"双击了%@",self);
 }
 
 - (void)didReceiveMemoryWarning {

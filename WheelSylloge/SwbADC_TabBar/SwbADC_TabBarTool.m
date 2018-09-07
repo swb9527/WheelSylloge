@@ -7,6 +7,7 @@
 //
 
 #import "SwbADC_TabBarTool.h"
+#import "SwbADC_ViewController.h"
 
 @implementation SwbADC_TabBarTool
 
@@ -43,6 +44,62 @@ static id _instance = nil;
 - (id)mutableCopyWithZone:(NSZone *)zone
 {
     return _instance;
+}
+
+/* tabbar item 显示小圆点 */
+- (void)showDotAtIndex:(NSInteger)index
+{
+    SwbADC_TabBarItem *tabBarItem = [self getTabBarItemAtIndex:index];
+    tabBarItem.badgeView.hidden = NO;
+    tabBarItem.badgeView.type = SWBBadgeValueTypeDot;
+}
+
+/* tabbar item显示new */
+- (void)showNewAtIndex:(NSInteger)index
+{
+    SwbADC_TabBarItem *tabBarItem = [self getTabBarItemAtIndex:index];
+    tabBarItem.badgeView.hidden = NO;
+    tabBarItem.badgeView.type = SWBBadgeValueTypeNew;
+}
+
+/* tabbar item 显示数字 */
+- (void)showBadgeValue:(NSString *)badgeValue AtIndex:(NSInteger)index
+{
+    SwbADC_TabBarItem *tabBarItem = [self getTabBarItemAtIndex:index];
+    tabBarItem.badgeView.hidden = NO;
+    tabBarItem.badgeView.badgeText = badgeValue;
+    tabBarItem.badgeView.type = SWBBadgeValueTypeNumber;
+}
+
+/* 设置tabbar item被选中 */
+- (void)setTabBarItemSelectedIndex:(NSInteger)index
+{
+    if (index >= [self swbADC_TabBar].tabBarItems.count) {
+        return;
+    }
+    [self rootTabBarVC].selectedIndex = index;
+    [self swbADC_TabBar].selectedIndex = index;
+}
+
+/* 根控制器 */
+- (SwbADC_ViewController *)rootTabBarVC
+{
+    return (SwbADC_ViewController *)appDelegate.window.rootViewController;
+}
+
+/* tabbar */
+- (SwbADC_TabBar *)swbADC_TabBar
+{
+    return [self rootTabBarVC].swbTabBar;
+}
+
+/* 获取index对应的item */
+- (SwbADC_TabBarItem *)getTabBarItemAtIndex:(NSInteger)index
+{
+    if (index >= [self swbADC_TabBar].tabBarItems.count) {
+        return nil;
+    }
+    return [self swbADC_TabBar].tabBarItems[index];
 }
 
 @end

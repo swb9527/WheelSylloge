@@ -23,6 +23,7 @@
         self.badgeLabel.layer.cornerRadius = frame.size.height/2;
         self.badgeLabel.layer.masksToBounds = YES;
         self.badgeLabel.backgroundColor = UIColor.redColor;
+        self.userInteractionEnabled = NO;
 //        self.automaticHidden = YES;
         [self addSubview:self.badgeLabel];
         self.hidden = YES;
@@ -33,7 +34,7 @@
 - (void)setType:(SWBBadgeValueType)type
 {
     _type = type;
-    self.hidden = NO;
+//    self.hidden = NO;
     switch (type) {
         case SWBBadgeValueTypeDot:
             {

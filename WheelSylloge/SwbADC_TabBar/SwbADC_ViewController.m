@@ -69,14 +69,14 @@
             model.normalColor = colorFromRGB(0xbfbfbf);
             model.selectColor = colorFromRGB(0x13227a);
             [itemConfigModels addObject:model];
-            model.badgeValueType = SWBBadgeValueTypeNumber;
-            if (idx == 1) {
-                model.badge = @"45";
-            }else if (idx == 2) {
-                model.badge = @"100";
-            }else{
-                model.badge = @"2";
-            }
+//            model.badgeValueType = SWBBadgeValueTypeDot;
+//            if (idx == 1) {
+//                model.badge = @"45";
+//            }else if (idx == 2) {
+//                model.badge = @"100";
+//            }else{
+//                model.badge = @"2";
+//            }
         }];
     }
     //6.设置VCs
@@ -98,6 +98,8 @@
         self.swbTabBar.delegate = self;
         [self.tabBar addSubview:self.swbTabBar];
     }
+    //清除tabbar上方的线条
+//    [self cleanTopLine];
 }
 
 - (void)viewDidLayoutSubviews
@@ -105,8 +107,6 @@
     [super viewDidLayoutSubviews];
     self.swbTabBar.frame = self.tabBar.bounds;
     [self.swbTabBar viewDidLayoutItems];
-    //清除tabbar上方的线条
-//    [self cleanTopLine];
 }
 
 - (void)cleanTopLine
@@ -135,9 +135,15 @@
     [super setSelectedIndex:selectedIndex];
     if (self.swbTabBar) {
         self.swbTabBar.selectedIndex = selectedIndex;
+        BaseViewController *vc = (BaseViewController *)[VCToolUtil getCurrentVC];
+        [vc tabBarItemSelected];
     }
 }
-
+- (void)swbADC_TabBar:(SwbADC_TabBar *)tabBar itemDoubleTappedIndex:(NSInteger)index
+{
+    BaseViewController *vc = (BaseViewController *)[VCToolUtil getCurrentVC];
+    [vc selectTabbarItemDoubleTapped];
+}
 
 
 

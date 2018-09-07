@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.brownColor;
     self.navigationItem.title = @"朋友圈";
+    
+    [[SwbADC_TabBarTool shareTool] showBadgeValue:@"56" AtIndex:2];
+}
+
+- (void)tabBarItemSelected
+{
+    [super tabBarItemSelected];
+    NSLog(@"单击了%@",self);
 }
 
 - (void)didReceiveMemoryWarning {

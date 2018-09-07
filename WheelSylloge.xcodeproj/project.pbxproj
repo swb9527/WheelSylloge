@@ -10,6 +10,14 @@
 		023134DBF4B55B255BA20818 /* libPods-WheelSyllogeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C84DC32468831A9B6D2B29 /* libPods-WheelSyllogeTests.a */; };
 		4FAE6722DB3E52026AF0F186 /* libPods-WheelSylloge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 571A12451106102E458245E7 /* libPods-WheelSylloge.a */; };
 		82D6ED80B76FB14483263AD7 /* libPods-WheelSyllogeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C6AA19E26345B83463DA26 /* libPods-WheelSyllogeUITests.a */; };
+		960435442133CC1500904BC8 /* PagerViewConfigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 960435432133CC1500904BC8 /* PagerViewConfigration.m */; };
+		960435482133DFB500904BC8 /* PagerViewSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 960435472133DFB500904BC8 /* PagerViewSegment.m */; };
+		9625AB0321426A4A001496E8 /* GestureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9625AB0221426A4A001496E8 /* GestureScrollView.m */; };
+		96530413212D0DAA00B8D264 /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96530412212D0DAA00B8D264 /* Test2ViewController.m */; };
+		96530417212D3E5400B8D264 /* VCToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 96530416212D3E5400B8D264 /* VCToolUtil.m */; };
+		9653041B212D658100B8D264 /* SwbACE_PagerViewListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9653041A212D658100B8D264 /* SwbACE_PagerViewListVC.m */; };
+		9653041E212D667A00B8D264 /* CellToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9653041D212D667A00B8D264 /* CellToolUtil.m */; };
+		96530426212D6BA100B8D264 /* NSString+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 96530425212D6BA100B8D264 /* NSString+SWB.m */; };
 		965A586320EF37C100354E39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A586220EF37C100354E39 /* AppDelegate.m */; };
 		965A586620EF37C100354E39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965A586520EF37C100354E39 /* ViewController.m */; };
 		965A586920EF37C100354E39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965A586720EF37C100354E39 /* Main.storyboard */; };
@@ -34,8 +42,12 @@
 		9688485720FDE0350004B73B /* TimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485620FDE0350004B73B /* TimeLineViewController.m */; };
 		9688485A20FDE03F0004B73B /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485920FDE03F0004B73B /* MineViewController.m */; };
 		9688485D20FDE04C0004B73B /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9688485C20FDE04C0004B73B /* CenterViewController.m */; };
+		968DBA20212FB06400AAEDF5 /* PagerViewCenterRefreshVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 968DBA1F212FB06400AAEDF5 /* PagerViewCenterRefreshVC.m */; };
+		968DBA24212FFBF500AAEDF5 /* PagerBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 968DBA23212FFBF500AAEDF5 /* PagerBaseVC.m */; };
 		96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */; };
 		96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A1FC9020F3621F000EE750 /* UIView+SWB.m */; };
+		96B0B62321227BC9003BB856 /* RefreshToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0B62221227BC9003BB856 /* RefreshToolUtil.m */; };
+		96E3840F212161E8005B5017 /* ToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3840E212161E8005B5017 /* ToolUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +74,23 @@
 		6C3BEB3FF9E849DD1A192DFD /* Pods-WheelSyllogeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSyllogeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSyllogeTests/Pods-WheelSyllogeTests.release.xcconfig"; sourceTree = "<group>"; };
 		82C6AA19E26345B83463DA26 /* libPods-WheelSyllogeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelSyllogeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871B1AF6E5D9B9CCA7F6E50F /* Pods-WheelSylloge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSylloge.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSylloge/Pods-WheelSylloge.release.xcconfig"; sourceTree = "<group>"; };
+		960435422133CC1500904BC8 /* PagerViewConfigration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagerViewConfigration.h; sourceTree = "<group>"; };
+		960435432133CC1500904BC8 /* PagerViewConfigration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagerViewConfigration.m; sourceTree = "<group>"; };
+		960435462133DFB500904BC8 /* PagerViewSegment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagerViewSegment.h; sourceTree = "<group>"; };
+		960435472133DFB500904BC8 /* PagerViewSegment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagerViewSegment.m; sourceTree = "<group>"; };
+		9625AB0121426A4A001496E8 /* GestureScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GestureScrollView.h; sourceTree = "<group>"; };
+		9625AB0221426A4A001496E8 /* GestureScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GestureScrollView.m; sourceTree = "<group>"; };
+		96530411212D0DAA00B8D264 /* Test2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test2ViewController.h; sourceTree = "<group>"; };
+		96530412212D0DAA00B8D264 /* Test2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
+		96530414212D311100B8D264 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		96530415212D3E5400B8D264 /* VCToolUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCToolUtil.h; sourceTree = "<group>"; };
+		96530416212D3E5400B8D264 /* VCToolUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCToolUtil.m; sourceTree = "<group>"; };
+		96530419212D658100B8D264 /* SwbACE_PagerViewListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbACE_PagerViewListVC.h; sourceTree = "<group>"; };
+		9653041A212D658100B8D264 /* SwbACE_PagerViewListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbACE_PagerViewListVC.m; sourceTree = "<group>"; };
+		9653041C212D667A00B8D264 /* CellToolUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellToolUtil.h; sourceTree = "<group>"; };
+		9653041D212D667A00B8D264 /* CellToolUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellToolUtil.m; sourceTree = "<group>"; };
+		96530424212D6BA100B8D264 /* NSString+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SWB.h"; sourceTree = "<group>"; };
+		96530425212D6BA100B8D264 /* NSString+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SWB.m"; sourceTree = "<group>"; };
 		965A585E20EF37C100354E39 /* WheelSylloge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelSylloge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965A586120EF37C100354E39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		965A586220EF37C100354E39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +109,8 @@
 		965A588720EF37C300354E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966D572B2101ACF700B9CBDE /* UIFont+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+SWB.h"; sourceTree = "<group>"; };
 		966D572C2101ACF700B9CBDE /* UIFont+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SWB.m"; sourceTree = "<group>"; };
+		966DB2C2211AD62D00C7C5F6 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		966DB2C3211AD64400C7C5F6 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		9680300F20FED070001D6721 /* UIColor+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SWB.h"; sourceTree = "<group>"; };
 		9680301020FED070001D6721 /* UIColor+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SWB.m"; sourceTree = "<group>"; };
 		9680301320FEE810001D6721 /* NavigateToolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigateToolUtil.h; sourceTree = "<group>"; };
@@ -111,11 +142,19 @@
 		9688485920FDE03F0004B73B /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		9688485B20FDE04C0004B73B /* CenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
 		9688485C20FDE04C0004B73B /* CenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
+		968DBA1E212FB06400AAEDF5 /* PagerViewCenterRefreshVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagerViewCenterRefreshVC.h; sourceTree = "<group>"; };
+		968DBA1F212FB06400AAEDF5 /* PagerViewCenterRefreshVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagerViewCenterRefreshVC.m; sourceTree = "<group>"; };
+		968DBA22212FFBF500AAEDF5 /* PagerBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagerBaseVC.h; sourceTree = "<group>"; };
+		968DBA23212FFBF500AAEDF5 /* PagerBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagerBaseVC.m; sourceTree = "<group>"; };
 		96A1FC8920F2FA38000EE750 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		96A1FC8C20F35AAB000EE750 /* SwbADC_TabBarBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwbADC_TabBarBadge.h; sourceTree = "<group>"; };
 		96A1FC8D20F35AAB000EE750 /* SwbADC_TabBarBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwbADC_TabBarBadge.m; sourceTree = "<group>"; };
 		96A1FC8F20F3621F000EE750 /* UIView+SWB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SWB.h"; sourceTree = "<group>"; };
 		96A1FC9020F3621F000EE750 /* UIView+SWB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SWB.m"; sourceTree = "<group>"; };
+		96B0B62121227BC9003BB856 /* RefreshToolUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefreshToolUtil.h; sourceTree = "<group>"; };
+		96B0B62221227BC9003BB856 /* RefreshToolUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshToolUtil.m; sourceTree = "<group>"; };
+		96E3840D212161E8005B5017 /* ToolUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolUtil.h; sourceTree = "<group>"; };
+		96E3840E212161E8005B5017 /* ToolUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolUtil.m; sourceTree = "<group>"; };
 		9E37DD8E0D601A31705C28D0 /* Pods-WheelSyllogeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSyllogeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSyllogeUITests/Pods-WheelSyllogeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7ADE0456854732A409B7531 /* Pods-WheelSylloge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSylloge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSylloge/Pods-WheelSylloge.debug.xcconfig"; sourceTree = "<group>"; };
 		E7C78366F8D8D153A9E64B26 /* Pods-WheelSyllogeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelSyllogeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheelSyllogeTests/Pods-WheelSyllogeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +198,100 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		960435412133CBCF00904BC8 /* pagerViewConfig(配置类) */ = {
+			isa = PBXGroup;
+			children = (
+				960435422133CC1500904BC8 /* PagerViewConfigration.h */,
+				960435432133CC1500904BC8 /* PagerViewConfigration.m */,
+			);
+			path = "pagerViewConfig(配置类)";
+			sourceTree = "<group>";
+		};
+		960435452133DDA800904BC8 /* PagerViewSegment(菜单栏) */ = {
+			isa = PBXGroup;
+			children = (
+				960435462133DFB500904BC8 /* PagerViewSegment.h */,
+				960435472133DFB500904BC8 /* PagerViewSegment.m */,
+			);
+			path = "PagerViewSegment(菜单栏)";
+			sourceTree = "<group>";
+		};
+		9625AB0021426925001496E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9625AB0121426A4A001496E8 /* GestureScrollView.h */,
+				9625AB0221426A4A001496E8 /* GestureScrollView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		964F3FB1212EBDDA00E382CE /* centerRefresh(悬浮样式--下拉刷新在中间) */ = {
+			isa = PBXGroup;
+			children = (
+				968DBA1E212FB06400AAEDF5 /* PagerViewCenterRefreshVC.h */,
+				968DBA1F212FB06400AAEDF5 /* PagerViewCenterRefreshVC.m */,
+			);
+			path = "centerRefresh(悬浮样式--下拉刷新在中间)";
+			sourceTree = "<group>";
+		};
+		96530418212D64E500B8D264 /* pagerview(半糖) */ = {
+			isa = PBXGroup;
+			children = (
+				960435452133DDA800904BC8 /* PagerViewSegment(菜单栏) */,
+				960435412133CBCF00904BC8 /* pagerViewConfig(配置类) */,
+				968DBA21212FFBB600AAEDF5 /* pagerViewBase(基类) */,
+				964F3FB1212EBDDA00E382CE /* centerRefresh(悬浮样式--下拉刷新在中间) */,
+				96530419212D658100B8D264 /* SwbACE_PagerViewListVC.h */,
+				9653041A212D658100B8D264 /* SwbACE_PagerViewListVC.m */,
+			);
+			path = "pagerview(半糖)";
+			sourceTree = "<group>";
+		};
+		9653041F212D6B2000B8D264 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				96A1FC8F20F3621F000EE750 /* UIView+SWB.h */,
+				96A1FC9020F3621F000EE750 /* UIView+SWB.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		96530420212D6B4A00B8D264 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				96530424212D6BA100B8D264 /* NSString+SWB.h */,
+				96530425212D6BA100B8D264 /* NSString+SWB.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		96530421212D6B5900B8D264 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				9680300F20FED070001D6721 /* UIColor+SWB.h */,
+				9680301020FED070001D6721 /* UIColor+SWB.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		96530422212D6B6000B8D264 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				966D572B2101ACF700B9CBDE /* UIFont+SWB.h */,
+				966D572C2101ACF700B9CBDE /* UIFont+SWB.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		96530423212D6B6800B8D264 /* CAAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				9682551E20F450BE004AF21C /* CAAnimation+SWB.h */,
+				9682551F20F450BE004AF21C /* CAAnimation+SWB.m */,
+			);
+			path = CAAnimation;
+			sourceTree = "<group>";
+		};
 		965A585520EF37C100354E39 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +322,7 @@
 				96A1FC8820F2FA24000EE750 /* Config */,
 				96A1FC8420F2F6FA000EE750 /* SwbADC_TabBar */,
 				9688484420FDD65C0004B73B /* ViewControllers */,
+				9625AB0021426925001496E8 /* View */,
 				96A1FC8B20F34944000EE750 /* Category */,
 				9680301220FEE7FA001D6721 /* UtilTool */,
 				96A1FC8320F2F6CF000EE750 /* Other */,
@@ -219,6 +353,14 @@
 			children = (
 				9680301320FEE810001D6721 /* NavigateToolUtil.h */,
 				9680301420FEE810001D6721 /* NavigateToolUtil.m */,
+				96B0B62121227BC9003BB856 /* RefreshToolUtil.h */,
+				96B0B62221227BC9003BB856 /* RefreshToolUtil.m */,
+				96E3840D212161E8005B5017 /* ToolUtil.h */,
+				96E3840E212161E8005B5017 /* ToolUtil.m */,
+				96530415212D3E5400B8D264 /* VCToolUtil.h */,
+				96530416212D3E5400B8D264 /* VCToolUtil.m */,
+				9653041C212D667A00B8D264 /* CellToolUtil.h */,
+				9653041D212D667A00B8D264 /* CellToolUtil.m */,
 			);
 			path = UtilTool;
 			sourceTree = "<group>";
@@ -228,6 +370,8 @@
 			children = (
 				9680301720FF0A80001D6721 /* TestViewController.h */,
 				9680301820FF0A80001D6721 /* TestViewController.m */,
+				96530411212D0DAA00B8D264 /* Test2ViewController.h */,
+				96530412212D0DAA00B8D264 /* Test2ViewController.m */,
 			);
 			path = "TestVC(测试跳转)";
 			sourceTree = "<group>";
@@ -235,6 +379,7 @@
 		9688484420FDD65C0004B73B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				96530418212D64E500B8D264 /* pagerview(半糖) */,
 				9680301620FF0A5F001D6721 /* TestVC(测试跳转) */,
 				9688484720FDDEC50004B73B /* tabBar(子控制器) */,
 			);
@@ -309,6 +454,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		968DBA21212FFBB600AAEDF5 /* pagerViewBase(基类) */ = {
+			isa = PBXGroup;
+			children = (
+				968DBA22212FFBF500AAEDF5 /* PagerBaseVC.h */,
+				968DBA23212FFBF500AAEDF5 /* PagerBaseVC.m */,
+			);
+			path = "pagerViewBase(基类)";
+			sourceTree = "<group>";
+		};
 		96A1FC8320F2F6CF000EE750 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,7 +496,10 @@
 			isa = PBXGroup;
 			children = (
 				96A1FC8920F2FA38000EE750 /* PrefixHeader.pch */,
+				966DB2C2211AD62D00C7C5F6 /* Define.h */,
+				966DB2C3211AD64400C7C5F6 /* Config.h */,
 				9682551D20F4439E004AF21C /* Color.h */,
+				96530414212D311100B8D264 /* Key.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -361,14 +518,11 @@
 		96A1FC8B20F34944000EE750 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				96A1FC8F20F3621F000EE750 /* UIView+SWB.h */,
-				96A1FC9020F3621F000EE750 /* UIView+SWB.m */,
-				9682551E20F450BE004AF21C /* CAAnimation+SWB.h */,
-				9682551F20F450BE004AF21C /* CAAnimation+SWB.m */,
-				9680300F20FED070001D6721 /* UIColor+SWB.h */,
-				9680301020FED070001D6721 /* UIColor+SWB.m */,
-				966D572B2101ACF700B9CBDE /* UIFont+SWB.h */,
-				966D572C2101ACF700B9CBDE /* UIFont+SWB.m */,
+				96530423212D6B6800B8D264 /* CAAnimation */,
+				96530422212D6B6000B8D264 /* UIFont */,
+				96530421212D6B5900B8D264 /* UIColor */,
+				96530420212D6B4A00B8D264 /* NSString */,
+				9653041F212D6B2000B8D264 /* UIView */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -595,17 +749,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968DBA20212FB06400AAEDF5 /* PagerViewCenterRefreshVC.m in Sources */,
+				96530426212D6BA100B8D264 /* NSString+SWB.m in Sources */,
+				96E3840F212161E8005B5017 /* ToolUtil.m in Sources */,
 				9680301120FED070001D6721 /* UIColor+SWB.m in Sources */,
 				9688485420FDE0290004B73B /* ChatViewController.m in Sources */,
 				9688485D20FDE04C0004B73B /* CenterViewController.m in Sources */,
 				9688484320FDD5330004B73B /* SwbADC_ViewController.m in Sources */,
 				9680301C20FF121D001D6721 /* BaseNavigationController.m in Sources */,
+				9653041E212D667A00B8D264 /* CellToolUtil.m in Sources */,
 				965A586620EF37C100354E39 /* ViewController.m in Sources */,
+				960435482133DFB500904BC8 /* PagerViewSegment.m in Sources */,
+				96B0B62321227BC9003BB856 /* RefreshToolUtil.m in Sources */,
 				9688484E20FDDFF30004B73B /* BaseViewController.m in Sources */,
+				96530413212D0DAA00B8D264 /* Test2ViewController.m in Sources */,
 				9682552620F4AEB7004AF21C /* SwbADC_TabBar.m in Sources */,
 				9682552020F450BE004AF21C /* CAAnimation+SWB.m in Sources */,
 				9680301520FEE810001D6721 /* NavigateToolUtil.m in Sources */,
 				96A1FC8E20F35AAC000EE750 /* SwbADC_TabBarBadge.m in Sources */,
+				9625AB0321426A4A001496E8 /* GestureScrollView.m in Sources */,
+				968DBA24212FFBF500AAEDF5 /* PagerBaseVC.m in Sources */,
 				9688485720FDE0350004B73B /* TimeLineViewController.m in Sources */,
 				9680301920FF0A80001D6721 /* TestViewController.m in Sources */,
 				965A587120EF37C200354E39 /* main.m in Sources */,
@@ -614,8 +777,11 @@
 				96A1FC9120F3621F000EE750 /* UIView+SWB.m in Sources */,
 				9688485A20FDE03F0004B73B /* MineViewController.m in Sources */,
 				965A586320EF37C100354E39 /* AppDelegate.m in Sources */,
+				9653041B212D658100B8D264 /* SwbACE_PagerViewListVC.m in Sources */,
 				9688485120FDE0170004B73B /* HomeViewController.m in Sources */,
+				960435442133CC1500904BC8 /* PagerViewConfigration.m in Sources */,
 				966D572D2101ACF700B9CBDE /* UIFont+SWB.m in Sources */,
+				96530417212D3E5400B8D264 /* VCToolUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

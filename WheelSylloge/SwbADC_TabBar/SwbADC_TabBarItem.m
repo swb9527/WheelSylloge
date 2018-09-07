@@ -8,6 +8,13 @@
 
 #import "SwbADC_TabBarItem.h"
 
+@interface SwbADC_TabBarItem()
+
+@property (strong, nonatomic) UIView    *doubleTapView;
+@property (nonatomic, copy) void (^doubleTapHander)(void);
+
+@end
+
 @implementation SwbADC_TabBarItem
 
 - (instancetype)init
@@ -152,19 +159,19 @@
         case SWBTabBarItemBadgeStyleTopRight:
         {
             //右上
-            self.badgeView.center = CGPointMake(self.frame.size.width - (self.badgeView.frame.size.width / 2), self.badgeView.frame.size.height / 2);
+            self.badgeView.center = CGPointMake(self.frame.size.width / 2 + self.iconImageView.frame.size.height / 2 + self.badgeView.frame.size.height / 2, self.badgeView.frame.size.height / 2+self.itemModel.itemEdgeInsets.top/2);
         }
             break;
         case SWBTabBarItemBadgeStyleTopCenter:
         {
             //中上
-            self.badgeView.center = CGPointMake(self.frame.size.width / 2, self.badgeView.frame.size.height / 2);
+            self.badgeView.center = CGPointMake(self.frame.size.width / 2, self.badgeView.frame.size.height / 2+self.itemModel.itemEdgeInsets.top/2);
         }
             break;
         case SWBTabBarItemBadgeStyleTopLeft:
         {
             //左上
-            self.badgeView.center = CGPointMake(self.badgeView.frame.size.width / 2, self.badgeView.frame.size.height / 2);
+            self.badgeView.center = CGPointMake(self.frame.size.width / 2 - self.iconImageView.frame.size.width / 2 - self.badgeView.frame.size.height / 2, self.badgeView.frame.size.height / 2+self.itemModel.itemEdgeInsets.top/2);
         }
             break;
             
@@ -304,6 +311,30 @@
         } completion:nil];
     }
     self.titleLabel.text = self.title;
+    
+    if (self.doubleTapView) {
+        self.doubleTapView.hidden = !isSelect;
+    }
+}
+
+- (void)setDoubleTapHandler:(void (^)(void))handler
+{
+    _doubleTapHander = handler;
+    if (!self.doubleTapView) {
+        self.doubleTapView = [[UIView alloc]initWithFrame:self.bounds];
+        self.doubleTapView.userInteractionEnabled = YES;
+        [self addSubview:self.doubleTapView];
+        UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTapped:)];
+        doubleTapRecognizer.numberOfTapsRequired = 2;
+        [self.doubleTapView addGestureRecognizer:doubleTapRecognizer];
+    }
+}
+
+- (void)doubleTapped:(UITapGestureRecognizer *)tap
+{
+    if (self.doubleTapHander) {
+        self.doubleTapHander();
+    }
 }
 
 - (void)setIconImageView:(UIImageView *)iconImageView
@@ -328,7 +359,7 @@
     _badge = badge;
     if (_badge) {
         self.badgeView.badgeText = badge;
-        [self itemDidLayoutBadgeView];  //布局Badge
+//        [self itemDidLayoutBadgeView];  //布局Badge
     }
 }
 

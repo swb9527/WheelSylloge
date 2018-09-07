@@ -21,6 +21,12 @@
     self.navigationItem.title = @"我的";
 }
 
+- (void)tabBarItemSelected
+{
+    [super tabBarItemSelected];
+    NSLog(@"单击了%@",self);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

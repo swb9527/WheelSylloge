@@ -15,6 +15,8 @@
 
 - (void)swbADC_TabBar:(SwbADC_TabBar *)tabBar didSelectIndex:(NSInteger)index;
 
+- (void)swbADC_TabBar:(SwbADC_TabBar *)tabBar itemDoubleTappedIndex:(NSInteger)index;
+
 @end
 
 @interface SwbADC_TabBar : UIView
