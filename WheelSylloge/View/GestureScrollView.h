@@ -6,8 +6,8 @@
 //  Copyright © 2018年 万恶的小彬彬. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface GestureScrollView : NSObject
+@interface GestureScrollView : UIScrollView
 
 @end

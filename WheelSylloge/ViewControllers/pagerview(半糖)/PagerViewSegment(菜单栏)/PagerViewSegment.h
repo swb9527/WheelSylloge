@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GestureScrollView.h"
 
-@interface PagerViewSegment : UIView
+@class PagerViewConfigration;
 
+@protocol PagerViewSegmentDelegate<NSObject>
 
+@optional
+
+/* <#注释#> */
+
+@end
+
+@interface PagerViewSegment : GestureScrollView
+
+@property (nonatomic, strong) <#id#> <#var#>
 
 @end
