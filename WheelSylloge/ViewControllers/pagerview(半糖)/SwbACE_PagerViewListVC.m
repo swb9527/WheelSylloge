@@ -21,14 +21,16 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = @"半糖效果";
+    [self wr_setNavBarBackgroundAlpha:0.0];
+    [self wr_setNavBarShadowImageHidden:YES];
     [self mainUI];
 }
 
 - (void)mainUI
 {
     [self addTableViewWithHeaderRefresh:YES FooterRefresh:NO];
-    self.baseTableView.delegate = self;
-    self.baseTableView.dataSource = self;
+//    self.baseTableView.delegate = self;
+//    self.baseTableView.dataSource = self;
 }
 
 

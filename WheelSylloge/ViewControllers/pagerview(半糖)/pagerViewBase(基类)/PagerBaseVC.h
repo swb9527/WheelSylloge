@@ -55,7 +55,7 @@
 /* 头部伸缩背景view */
 @property (nonatomic, strong) UIView *scaleBackgroundView;
 
-/* 以下初始化方法失效 */
+/* 使以下初始化方法失效 */
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 

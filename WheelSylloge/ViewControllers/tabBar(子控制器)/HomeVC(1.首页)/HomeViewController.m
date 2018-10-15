@@ -22,6 +22,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.whiteColor;
     self.navigationItem.title = @"首页";
+    [self wr_setNavBarBackgroundAlpha:0.0];
+    [self wr_setNavBarShadowImageHidden:YES];
     
     [self mainUI];
 }

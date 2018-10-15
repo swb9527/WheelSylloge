@@ -15,12 +15,28 @@
 
 @optional
 
-/* <#注释#> */
+/* 点击item */
+- (void)pagerViewSegmentItemClicked:(UILabel *)label index:(NSInteger)index;
+
+/* 点击add按钮 */
+- (void)pagerViewSegmentAddButtonClicked:(UIButton *)button;
 
 @end
 
 @interface PagerViewSegment : GestureScrollView
 
-@property (nonatomic, strong) <#id#> <#var#>
+/* 使以下初始化方法失效 */
++ (instancetype)new UNAVAILABLE_ATTRIBUTE;
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+
++ (instancetype)pagerViewSegmentWithFrame:(CGRect)frame titles:(NSArray *)titles configration:(PagerViewConfigration *)configration delegate:(id<PagerViewSegmentDelegate>)delegate defaultIndex:(NSInteger)defaultIndex;
+
+- (void)adjustItemPositionWithCurrentIndex:(NSInteger)index;
+
+- (void)adjustItemWithProgress:(CGFloat)progress lastIndex:(NSInteger)lastIndex currentIndex:(NSInteger)currentIndex;
+
+- (void)selectedItemIndex:(NSInteger)index animated:(BOOL)animated;
+
+- (void)adjustIntemWithAnimated:(BOOL)animated;
 
 @end

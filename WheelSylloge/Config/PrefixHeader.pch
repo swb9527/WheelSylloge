@@ -41,5 +41,6 @@
 #import "VCToolUtil.h"
 #import "CellToolUtil.h"
 #import "Key.h"
+#import "WRNavigationBar.h"
 
 #endif /* PrefixHeader_pch */

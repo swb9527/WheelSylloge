@@ -8,173 +8,147 @@
 
 #import <Foundation/Foundation.h>
 
-/* 标题样式 */
-typedef NS_OPTIONS(NSUInteger, TitleBarStyle) {
-    TitleBarStyleClassic,   /* 经典标题栏样式 */
-    TitleBarStyleScroll,    /* 滚动标题栏样式 */
+typedef NS_ENUM(NSInteger, PagerViewStyle) {
+    PagerViewStyleTop,                      //MenuView在顶部
+    PagerViewStyleNavigation,               //MenuView在系统导航条
+    PagerViewStyleSuspensionRefreshTop,     //MenuView悬浮，刷新控件在HeaderView顶部
+    PagerViewStyleSuspensionRefreshCenter,  //MenuView悬浮，刷新控件在HeaderView底部
 };
 
-/* 底部指示器样式 */
-typedef NS_OPTIONS(NSUInteger, IndicatorStyle) {
-    IndicatorStyleItem,         /* 指示器宽度与item一样 */
-    IndicatorStyleItemTitle,    /* 指示器与item文字宽度一样的样式 */
-};
-
-/* 按钮图片样式 */
-typedef NS_OPTIONS(NSUInteger, ImageEffectStyle) {
-    ImageEffectStyleClassic,    /* 图片左，文字右 */
-    ImageEffectStyleUpDown,     /* 图片上，文字下 */
-    ImageEffectStyleCenter,     /* 图片文字都在中间 */
-};
 
 
 @interface PagerViewConfigration : NSObject
 
-/* 初始化 */
-+ (instancetype)swb_initWithPagerViewConfigrationBlock:(void(^)(PagerViewConfigration *config))configBlock;
+/* 菜单栏位置 默认顶部 */
+@property (nonatomic, assign) PagerViewStyle pagerViewStyle;
 
-#pragma mark- ============ 子界面设置 ==============
-/* 子视图滚动是否有动画效果 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_childScollAnimalEnabled)(BOOL childScollAnimalEnabled);
-@property (nonatomic, assign) BOOL childScollAnimalEnabled;
+/* 是否显示遮盖 默认NO */
+@property (nonatomic, assign) BOOL showConver;
 
-/* 子视图是否支持手势滑动切换界面 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_childScollGestureEnabled)(BOOL childScollGestureEnabled);
-@property (nonatomic, assign) BOOL childScollGestureEnabled;
+/* 是否显示指示器线条 默认YES */
+@property (nonatomic, assign) BOOL showIndicatorLine;
 
-#pragma mark- ============ 标题栏设置 ==============
-/* 是否启用穿透效果 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_pagerViewPenetrationEnabled)(BOOL pagerViewPenetrationEnabled);
-@property (nonatomic, assign) BOOL pagerViewPenetrationEnabled;
+/* 是否显示底部线条 默认YES */
+@property (nonatomic, assign) BOOL showBottomLine;
 
-/* 标题栏样式 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_titleBarStyle)(TitleBarStyle titleBarStyle);
-@property (nonatomic, assign) TitleBarStyle titleBarStyle;
+/* 标题切换颜色是否渐变 默认YES */
+@property (nonatomic, assign) BOOL showGradientColor;
 
-/* 标题栏背景颜色 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_pagerViewBackgroundColor)(UIColor *pagerViewBackgroundColor);
+/* 是否显示addButton按钮 默认NO */
+@property (nonatomic, assign) BOOL showAddButton;
+
+/* 菜单栏是否支持滚动 默认YES */
+@property (nonatomic, assign) BOOL scrollMenu;
+
+/* 菜单栏是否支持菜单效果 默认NO */
+@property (nonatomic, assign) BOOL bouncesMenu;
+
+/*
+ *  是否是居中 (当所有的Item+margin的宽度小于ScrollView宽度)  默认 YES
+ *  scrollMenu = NO,aligmentModeCenter = NO 会变成平分
+ */
+@property (nonatomic, assign) BOOL aligmentModeCenter;
+
+/* 当aligmentModeCenter 变为平分时 是否需要线条宽度等于字体宽度 默认 NO */
+@property (nonatomic, assign) BOOL lineWidthEqualTitleWidth;
+
+/* addButton按钮图片 Normal */
+@property (nonatomic, strong) NSString *addButtonNormalImageName;
+
+/* addButton按钮图片 Highlighted */
+@property (nonatomic, strong) NSString *addButtonHighlightedImageName;
+
+/* addButton按钮背景颜色 */
+@property (nonatomic, strong) UIColor *addButtonBackgroundColor;
+
+/* 指示器线条颜色 */
+@property (nonatomic, strong) UIColor *indicatorLineColor;
+
+/* 遮盖颜色 */
+@property (nonatomic, strong) UIColor *converColor;
+
+/* 菜单栏背景颜色 */
 @property (nonatomic, strong) UIColor *pagerViewBackgroundColor;
 
-/* 标题栏frame */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_pagerViewFrame)(CGRect pagerViewFrame);
-@property (nonatomic, assign) CGRect pagerViewFrame;
+/* 选项标题颜色 Normal */
+@property (nonatomic, strong) UIColor *itemTitleNormalColor;
 
-/* 标题栏背景图 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_pagerViewBackgroundImage)(UIImage *pagerViewBackgroundImage);
-@property (nonatomic, strong) UIImage *pagerViewBackgroundImage;
+/* 选项标题颜色 Selected */
+@property (nonatomic, strong) UIColor *itemTitleSelectedColor;
 
-#pragma mark- ============ 指示器设置 ==============
-/* 指示器的颜色是否和item标题颜色一致 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorColorEqualTextColorEnabled)(BOOL indicatorColorEqualTextColorEnabled);
-@property (nonatomic, assign) BOOL indicatorColorEqualTextColorEnabled;
+/* 底部线条颜色 */
+@property (nonatomic, strong) UIColor *bottomLineColor;
 
-/* 指示器是否有动画效果 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorsAnimalsEnabled)(BOOL indicatorsAnimalsEnabled);
-@property (nonatomic, assign) BOOL indicatorsAnimalsEnabled;
+/* 底部线条左右偏移量 默认0 */
+@property (nonatomic, assign) CGFloat bottomLineLeftAndRightMargin;
 
-/* 指示器是否跟随滚动 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorFollowEnabled)(BOOL indicatorFollowEnabled);
-@property (nonatomic, assign) BOOL indicatorFollowEnabled;
+/* 底部线条圆角 */
+@property (nonatomic, assign) CGFloat bottomLineCornerRadius;
 
-/* 指示器样式 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorStyle)(IndicatorStyle indicatorStyle);
-@property (nonatomic, assign) IndicatorStyle indicatorStyle;
+/* 指示器线条的高度 默认2 */
+@property (nonatomic, assign) CGFloat indicatorLineHeight;
 
-/* 指示器frame */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorFrame)(CGRect indicatorFrame);
-@property (nonatomic, assign) CGRect indicatorFrame;
+/* 指示器线条距底部距离 默认0 */
+@property (nonatomic, assign) CGFloat indicatorLineBottomMargin;
 
-/* 指示器颜色 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorColor)(UIColor *indicatorColor);
-@property (nonatomic, strong) UIColor *indicatorColor;
+/* 指示器线条圆角 默认0 */
+@property (nonatomic, assign) CGFloat indicatorLineCornerRadius;
 
-/* 指示器图片(设置了图片的话,此控件是根据图片本身的大小自适应的) */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorImage)(UIImage *indicatorImage);
-@property (nonatomic, strong) UIImage *indicatorImage;
+/* 线条左右增加 0 默认线条宽度是等于item宽度 */
+@property (nonatomic, assign) CGFloat indicatorLineLeftAndRightAddWidth;
 
-/* 指示器是否隐藏 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_indicatorHidden)(BOOL indicatorHidden);
-@property (nonatomic, assign) BOOL indicatorHidden;
+/* 底部线条高度 默认1 */
+@property (nonatomic, assign) CGFloat bottomLineHeight;
 
-#pragma mark- ============ item设置 ==============
-/* 是否启用滑动颜色渐变 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_itemTextColorGradientEnabled)(BOOL itemTextColorGradientEnabled);
-@property (nonatomic, assign) BOOL itemTextColorGradientEnabled;
+/* 遮盖高度 默认28 */
+@property (nonatomic, assign) CGFloat converHeight;
 
-/* 是否显示标题文字 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_itemTextHidden)(BOOL itemTextHidden);
-@property (nonatomic, assign) BOOL itemTextHidden;
+/* 菜单栏高度 默认44 */
+@property (nonatomic, assign) CGFloat pagerViewHeight;
 
-/* 默认选中的item */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_selectedItemSegmentIndex)(NSInteger selectedItemSegmentIndex);
-@property (nonatomic, assign) NSInteger selectedItemSegmentIndex;
+/* 菜单栏宽度 默认 屏幕宽度 */
+@property (nonatomic, assign) CGFloat pagerViewWidth;
 
-/* item图片效果 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_itemImageEffectStyle)(ImageEffectStyle itemImageEffectStyle);
-@property (nonatomic, assign) ImageEffectStyle itemImageEffectStyle;
+/* 遮盖圆角 默认14 */
+@property (nonatomic, assign) CGFloat converCornerRadius;
 
-/* item普通状态下的背景色 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_normalItemBackgroundColor)(UIColor *normalItemBackgroundColor);
-@property (nonatomic, strong) UIColor *normalItemBackgroundColor;
+/* 选项相邻间隙 默认0 */
+@property (nonatomic, assign) CGFloat itemMargin;
 
-/* item选中状态下的背景颜色 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_selectedItemBackgroundColor)(UIColor *selectedItemBackgroundColor);
-@property (nonatomic, strong) UIColor *selectedItemBackgroundColor;
+/* 选项左右间隙 默认0 */
+@property (nonatomic, assign) CGFloat itemLeftAndRightMargin;
 
-/* item普通状态下的文字颜色 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_normalItemTextColor)(UIColor *normalItemTextColor);
-@property (nonatomic, strong) UIColor *normalItemTextColor;
+/* 选项字体 默认14 */
+@property (nonatomic, strong) UIFont *itemTitleNormalFont;
 
-/* item选中状态下的文字颜色 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_selectedItemTextColor)(UIColor *selectedItemTextColor);
-@property (nonatomic, strong) UIColor *selectedItemTextColor;
+/* 选项选中字体 */
+@property (nonatomic, strong) UIFont *itemTitleSelectedFont;
 
-/* item文字font */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_itemTextFont)(UIFont *itemTextFont);
-@property (nonatomic, strong) UIFont *itemTextFont;
+/* 选项缩放系数 */
+@property (nonatomic, assign) CGFloat itemMaxScale;
 
-/* item普通状态下的图片 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_normalItemImage)(UIImage *normalItemImage);
-@property (nonatomic, strong) UIImage *normalItemImage;
+/* 使下面的初始化方法失效 */
++ (instancetype)new UNAVAILABLE_ATTRIBUTE;
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
 
-/* item选中状态下的图片 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_selectedItemImage)(UIImage *selectedItemImage);
-@property (nonatomic, strong) UIImage *selectedItemImage;
++ (instancetype)defaultConfig;
 
-/* item普通状态下的图片数组 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_normalItemImageArray)(NSArray *normalItemImageArray);
-@property (nonatomic, strong) NSArray *normalItemImageArray;
 
-/* item选中状态下的图片数组 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_selectedItemImageArray)(NSArray *selectedItemImageArray);
-@property (nonatomic, strong) NSArray *selectedItemImageArray;
+/* 滑动时候颜色渐变 */
+@property (nonatomic, assign) CGFloat deltaScale;
 
-/* item普通状态下的背景图片 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_normalItemBackgroundImage)(UIImage *normalItemBackgroundImage);
-@property (nonatomic, strong) UIImage *normalItemBackgroundImage;
+@property (nonatomic, assign) CGFloat deltaNorR;
 
-/* item选中状态下的背景图片 */
-@property (nonatomic, strong) PagerViewConfigration *(^swb_selectedItemBackgroundImage)(UIImage *selectedItemBackgroundImage);
-@property (nonatomic, strong) UIImage *selectedItemBackgroundImage;
+@property (nonatomic, assign) CGFloat deltaNorG;
 
-/* item普通状态下的背景图片数组 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_normalItemBackgroundImageArray)(NSArray *normalItemBackgroundImageArray);
-@property (nonatomic, strong) NSArray *normalItemBackgroundImageArray;
+@property (nonatomic, assign) CGFloat deltaNorB;
 
-/* item选中状态下的背景图片数组 */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_selectedItemBackgroundImageArray)(NSArray *selectedItemBackgroundImageArray);
-@property (nonatomic, strong) NSArray *selectedItemBackgroundImageArray;
+@property (nonatomic, assign) CGFloat deltaSelR;
 
-/* item的图片大小(不能设置背景图片) */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_itemImageSize)(CGSize itemImageSize);
-@property (nonatomic, assign) CGSize itemImageSize;
+@property (nonatomic, assign) CGFloat deltaSelG;
 
-/* item普通状态下文字颜色数组(每个item的颜色不同) */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_normalItemTextColorArray)(NSArray *normalItemTextColorArray);
-@property (nonatomic, strong) NSArray *normalItemTextColorArray;
+@property (nonatomic, assign) CGFloat deltaSelB;
 
-/* item选中状态下文字颜色数组(每个item的颜色不同) */
-@property (nonatomic, copy, readonly) PagerViewConfigration *(^swb_selectedItemTextColorArray)(NSArray *selectedItemTextColorArray);
-@property (nonatomic, strong) NSArray *selectedItemTextColorArray;
+- (void)setRGBWithProgress:(CGFloat)progress;
 
 @end
